@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="2.1m"
+		durationms="124020"
+		type="root"
+		rid="a4bbda762a90508"
+		totalerrorcount="1"
+		totalwarningcount="0"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="1920x1080"
+		timestamp="28.01.2018 09:59:11"
+		timestampiso="2018-01-28T07:59:11"
+		endtime="28.01.2018 10:01:15"
+		timeoutfactor="1"
+		module="CreateProject">
+		<detail>
+			CreateProject
+		</detail>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="02:04.019"
+			timeRelativeToTestModuleStartTime="02:04.020"
+			timeWallClock="10:01:15"
+			time="02:04.019"
+			level="Error"
+			category="Module">
+			<message>
+				The test run has been aborted by the user.
+			</message>
+			<metainfo
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>

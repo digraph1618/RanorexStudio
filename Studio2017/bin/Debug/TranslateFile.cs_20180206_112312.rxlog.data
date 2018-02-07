@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Success"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="3b16c0c911ca6ce"
+		totalerrorcount="0"
+		totalwarningcount="1"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="06.02.2018 11:23:20"
+		timestampiso="2018-02-06T09:23:20"
+		endtime="06.02.2018 11:41:40"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:11.960"
+			timeRelativeToTestModuleStartTime="00:11.976"
+			timeWallClock="11:23:32"
+			time="00:11.960"
+			level="Warn"
+			category="WinForms">
+			<message>
+				This control (from process 'SDLTradosStudio') seems to be a Windows Forms control, but was not recognized as such, possibly due to a security limitation. UI element identification capabilities for this control may be limited.<br/>If this control is a WinForms control, please make sure that the automating process has the rights to access the automated application. Otherwise, please ignore this limitation.<br/>Process: 'SDLTradosStudio' (pid 7820)<br/>The following website provides more information on this technology limitation:<br/>https://www.ranorex.com/help/v8.0/technology-instrumentation/general-troubleshooting#GeneralTroubleshooting-.NETWinForms<br/>(This message is only shown once per report.)
+			</message>
+			<metainfo
+				limitationName="PotentiallyWinForms"
+				showInProgressDialog="False"
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="76"
+				loglvl="Warn">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="02:23.701"
+			timeRelativeToTestModuleStartTime="02:23.716"
+			timeWallClock="11:25:43"
+			time="02:23.701"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Erste Schritte', expected='Erste Schritte').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="101"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="02:43.388"
+			timeRelativeToTestModuleStartTime="02:43.404"
+			timeWallClock="11:26:03"
+			time="02:43.388"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden', expected='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="105"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="02:48.337"
+			timeRelativeToTestModuleStartTime="02:48.353"
+			timeWallClock="11:26:08"
+			time="02:48.337"
+			level="Success"
+			category="Success">
+			<message>
+				Terms is found for the second segment
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="112"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="03:34.044"
+			timeRelativeToTestModuleStartTime="03:34.060"
+			timeWallClock="11:26:54"
+			time="03:34.044"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Ranorex translation', expected='Ranorex translation').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="123"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="04:23.770"
+			timeRelativeToTestModuleStartTime="04:23.785"
+			timeWallClock="11:27:44"
+			time="04:23.770"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Platzieren Sie den Fotodrucker auf einer flachen, sauberen und staubfreien Oberfl&#228;che, und stellen Sie ihn an einem trockenen Ort auf, der keinem direkten Sonnenlicht ausgesetzt ist.', expected='Platzieren Sie den Fotodrucker auf einer flachen, sauberen und staubfreien Oberfl&#228;che, und stellen Sie ihn an einem trockenen Ort auf, der keinem direkten Sonnenlicht ausgesetzt ist.').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="132"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="04:43.516"
+			timeRelativeToTestModuleStartTime="04:43.532"
+			timeWallClock="11:28:03"
+			time="04:43.516"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Ranorex translation', expected='Ranorex translation').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="142"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="05:32.720"
+			timeRelativeToTestModuleStartTime="05:32.735"
+			timeWallClock="11:28:52"
+			time="05:32.720"
+			level="Success"
+			category="Success">
+			<message>
+				Term was added into target segment
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="150"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="05:56.583"
+			timeRelativeToTestModuleStartTime="05:56.599"
+			timeWallClock="11:29:16"
+			time="05:56.583"
+			level="Success"
+			category="Success">
+			<message>
+				Terms is found for the second segment
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="161"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="18:18.848"
+			timeRelativeToTestModuleStartTime="18:18.864"
+			timeWallClock="11:41:39"
+			time="18:18.848"
+			level="Success"
+			category="Success">
+			<message>
+				Edited term is found
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="175"
+				loglvl="Success">
+			</metainfo>
+		</item>
+	</activity>
+</report>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="920496a719ab12"
+		totalerrorcount="1"
+		totalwarningcount="0"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="1920x1080"
+		timestamp="27.01.2018 21:49:57"
+		timestampiso="2018-01-27T19:49:57"
+		endtime="27.01.2018 21:52:07"
+		timeoutfactor="1"
+		module="CreateProject">
+		<detail>
+			CreateProject
+		</detail>
+		<errormessage>
+			WaitForAttributeEqual failed. Element for item 'Studio2017Repository.JobProgressDialog.AddingFilesProgress' does not exist  (Failed to find item 'Studio2017Repository.JobProgressDialog.AddingFilesProgress'. No element found for path '//form[@controlname='JobProgressDialog']//text[@text~'Adding files']' within 1m.).
+		</errormessage>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="02:10.123"
+			timeRelativeToTestModuleStartTime="02:10.123"
+			timeWallClock="21:52:07"
+			time="02:10.123"
+			level="Error"
+			category="Module"
+			errimg=".\CreatePr_4c4de54b_8ea3d68f_trace.jpg"
+			errthumb=".\CreatePr_4c4de54b_8ea3d68f_trace_thumb.jpg">
+			<message>
+				WaitForAttributeEqual failed. Element for item 'Studio2017Repository.JobProgressDialog.AddingFilesProgress' does not exist  (Failed to find item 'Studio2017Repository.JobProgressDialog.AddingFilesProgress'. No element found for path '//form[@controlname='JobProgressDialog']//text[@text~'Adding files']' within 1m.).
+			</message>
+			<metainfo
+				stacktrace="   at Ranorex.Core.Repository.RepoItemInfo.WaitForAttributeInternal(Duration waitTimeout, String name, Object value, WaitForAction action)
+   at Ranorex.Core.Repository.RepoItemInfo.WaitForAttributeEqual(Duration waitTimeout, String name, Object value)
+   at Studio2017.ProjectCreationUtility.createProject(String projectName, String tmLocation, String termbaseLocation, String sourceLanguage, String targetLanguage) in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ProjectCreationUtility.cs:line 70
+   at Studio2017.CreateProject.Ranorex.Core.Testing.ITestModule.Run() in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\CreateProject.cs:line 78
+   at Ranorex.Core.Testing.TestModuleLeaf.RunInternal(DataContext parentDataContext, Int32 iteration, Int32 iterationCount, Boolean skipIteration)"
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ProjectCreationUtility.cs"
+				codeline="70"
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>

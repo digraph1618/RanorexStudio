@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="19b5e9bf505b074"
+		totalerrorcount="1"
+		totalwarningcount="0"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="01.02.2018 09:20:03"
+		timestampiso="2018-02-01T07:20:03"
+		endtime="01.02.2018 09:20:14"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<errormessage>
+			Objects are not equal (actual='Erste Schritte', expected='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden').
+		</errormessage>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:10.247"
+			timeRelativeToTestModuleStartTime="00:10.248"
+			timeWallClock="09:20:13"
+			time="00:10.247"
+			level="Failure"
+			category="Validation"
+			errimg=".\Translat_b8a71c4d_a5cfb2be_trace.jpg"
+			errthumb=".\Translat_b8a71c4d_a5cfb2be_trace_thumb.jpg">
+			<message>
+				Objects are not equal (actual='Erste Schritte', expected='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="95"
+				loglvl="Failure">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="00:10.300"
+			timeRelativeToTestModuleStartTime="00:10.301"
+			timeWallClock="09:20:14"
+			time="00:10.300"
+			level="Error"
+			category="Module"
+			errimg=".\Translat_b8a71c4d_54453adb_trace.jpg"
+			errthumb=".\Translat_b8a71c4d_54453adb_trace_thumb.jpg">
+			<message>
+				Module execution was aborted because a validation step has failed. Objects are not equal (actual='Erste Schritte', expected='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden').
+			</message>
+			<metainfo
+				stacktrace="   at Ranorex.Validate.ThrowValidationException(RepoItemInfo itemInfo, ValidationException ex)
+   at Ranorex.Validate.IsTrueInternal(Boolean condition, String message, Options options, RepoItemInfo itemInfo, RanorexException innerException)
+   at Ranorex.Validate.AreEqual(Object actual, Object expected, String message, Options options)
+   at Ranorex.Validate.AreEqual(Object actual, Object expected, String message, Boolean exceptionOnFail)
+   at Ranorex.Validate.AreEqual(Object actual, Object expected)
+   at Studio2017.TranslateFile.Ranorex.Core.Testing.ITestModule.Run() in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs:line 95
+   at Ranorex.Core.Testing.TestModuleLeaf.RunInternal(DataContext parentDataContext, Int32 iteration, Int32 iterationCount, Boolean skipIteration)"
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="95"
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>

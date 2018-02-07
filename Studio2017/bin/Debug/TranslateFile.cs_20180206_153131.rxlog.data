@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="5565bede6054806"
+		totalerrorcount="1"
+		totalwarningcount="1"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="06.02.2018 15:31:38"
+		timestampiso="2018-02-06T13:31:38"
+		endtime="06.02.2018 15:33:11"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<errormessage>
+			Failed to find item 'Studio2017Repository.ProjectWizard.Use'.
+		</errormessage>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:10.301"
+			timeRelativeToTestModuleStartTime="00:10.301"
+			timeWallClock="15:31:49"
+			time="00:10.301"
+			level="Warn"
+			category="WinForms"
+			errimg=".\Translat_16fe696b_f6abbda8_trace.jpg"
+			errthumb=".\Translat_16fe696b_f6abbda8_trace_thumb.jpg">
+			<message>
+				This control (from process 'SDLTradosStudio') seems to be a Windows Forms control, but was not recognized as such, possibly due to a security limitation. UI element identification capabilities for this control may be limited.<br/>If this control is a WinForms control, please make sure that the automating process has the rights to access the automated application. Otherwise, please ignore this limitation.<br/>Process: 'SDLTradosStudio' (pid 15576)<br/>The following website provides more information on this technology limitation:<br/>https://www.ranorex.com/help/v8.0/technology-instrumentation/general-troubleshooting#GeneralTroubleshooting-.NETWinForms<br/>(This message is only shown once per report.)
+			</message>
+			<metainfo
+				limitationName="PotentiallyWinForms"
+				showInProgressDialog="False"
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="78"
+				loglvl="Warn">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="01:32.851"
+			timeRelativeToTestModuleStartTime="01:32.851"
+			timeWallClock="15:33:11"
+			time="01:32.851"
+			level="Error"
+			category="Module"
+			errimg=".\Translat_16fe696b_99166043_trace.jpg"
+			errthumb=".\Translat_16fe696b_99166043_trace_thumb.jpg">
+			<message>
+				Failed to find item 'Studio2017Repository.ProjectWizard.Use'.<br/>No element found for path './/menuitem[@accessiblename~'Use']' within 30s.
+			</message>
+			<metainfo
+				stacktrace="   at Ranorex.Core.Repository.RepoItemInfo.FindInternal[T](Boolean findSingle, Boolean throwException, Duration effectiveTimeoutOverride)&#13;&#10;   at Ranorex.Core.Repository.RepoItemInfo.&lt;>c__DisplayClass75_0`1.&lt;Find>b__0()&#13;&#10;   at Ranorex.Core.Testing.Services.NoMaintenanceModeService.HandleElementNotFound[T](Func`1 action, RepoItemInfo entry)&#13;&#10;   at Ranorex.Core.Repository.RepoItemInfo.Find[T](Boolean findSingle, Boolean throwException, Duration effectiveTimeoutOverride)&#13;&#10;   at Ranorex.Core.Repository.RepoItemInfo.CreateAdapter[T](Boolean throwException, Duration waitTimeout)&#13;&#10;   at Ranorex.Core.Repository.RepoItemInfo.CreateAdapter[T](Boolean throwException)&#13;&#10;   at Studio2017.Studio2017RepositoryFolders.ProjectWizardAppFolder.get_Use() in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\Studio2017Repository.cs:line 1793&#13;&#10;   at Studio2017.ProjectCreationUtility.addTM(String tmtbLocation, String tmName) in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ProjectCreationUtility.cs:line 134&#13;&#10;   at Studio2017.ProjectCreationUtility.createProject(String projectName, String filesFolderPath, String tmtbLocation, String tmName, String termbaseName, String sourceLanguage, String targetLanguage) in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ProjectCreationUtility.cs:line 68&#13;&#10;   at Studio2017.TranslateFile.Ranorex.Core.Testing.ITestModule.Run() in c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs:line 92&#13;&#10;   at Ranorex.Core.Testing.TestModuleLeaf.RunInternal(DataContext parentDataContext, Int32 iteration, Int32 iterationCount, Boolean skipIteration)"
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ProjectCreationUtility.cs"
+				codeline="134"
+				type="repoitem"
+				path="/form[@automationid='Window_1']//menuitem[@accessiblename~'Use']"
+				itempath=".//menuitem[@accessiblename~'Use']"
+				fullname="Studio2017Repository.ProjectWizard.Use"
+				id="4cd6003514d44c53b888e868a1e6f0bc"
+				timeout="60000"
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>

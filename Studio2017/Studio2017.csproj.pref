@@ -1,0 +1,26 @@
+﻿<Properties>
+  <Array name="active">
+    <Element value="BatchTaskUtility.cs" />
+  </Array>
+  <Array name="bookmarks" />
+  <Array name="files">
+    <Element value="Recording1.cs" />
+    <Element value="Recording1.rxrec" />
+    <Element value="ViewsUtility.cs" />
+    <Element value="Licensing.cs" />
+    <Element value="Studio2017Repository.rxrep" />
+    <Element value="CreateProject.cs" />
+    <Element value="UtilityMethods.cs" />
+    <Element value="ProjectCreationUtility.cs" />
+    <Element value="TranslateFile.cs" />
+    <Element value="EditorUtility.cs" />
+    <Element value="BatchTaskUtility.cs" />
+    <Element value="Studio2017Repository.cs" />
+  </Array>
+  <Properties name="projectSavedData">
+    <Properties name="customTool">
+      <runOnBuild value="False" />
+    </Properties>
+    <Array name="recentusercodeselections" />
+  </Properties>
+</Properties>

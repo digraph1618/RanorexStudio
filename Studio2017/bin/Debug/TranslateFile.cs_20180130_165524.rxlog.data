@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Success"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="7de9065a460e260"
+		totalerrorcount="0"
+		totalwarningcount="0"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="30.01.2018 16:55:31"
+		timestampiso="2018-01-30T14:55:31"
+		endtime="30.01.2018 16:55:48"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:07.772"
+			timeRelativeToTestModuleStartTime="00:07.772"
+			timeWallClock="16:55:39"
+			time="00:07.772"
+			level="Success"
+			category="Validation">
+			<message>
+				Condition is true.
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ViewsUtility.cs"
+				codeline="53"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="00:16.983"
+			timeRelativeToTestModuleStartTime="00:16.983"
+			timeWallClock="16:55:48"
+			time="00:16.983"
+			level="Success"
+			category="Validation">
+			<message>
+				Condition is true.
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\ViewsUtility.cs"
+				codeline="66"
+				loglvl="Success">
+			</metainfo>
+		</item>
+	</activity>
+</report>

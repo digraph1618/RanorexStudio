@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="2db4d835e1d51cc"
+		totalerrorcount="1"
+		totalwarningcount="1"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="02.02.2018 15:39:39"
+		timestampiso="2018-02-02T13:39:39"
+		endtime="02.02.2018 15:39:55"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:10.429"
+			timeRelativeToTestModuleStartTime="00:10.429"
+			timeWallClock="15:39:49"
+			time="00:10.429"
+			level="Warn"
+			category="WinForms"
+			errimg=".\Translat_2dd06907_88462d1d_trace.jpg"
+			errthumb=".\Translat_2dd06907_88462d1d_trace_thumb.jpg">
+			<message>
+				This control (from process 'SDLTradosStudio') seems to be a Windows Forms control, but was not recognized as such, possibly due to a security limitation. UI element identification capabilities for this control may be limited.<br/>If this control is a WinForms control, please make sure that the automating process has the rights to access the automated application. Otherwise, please ignore this limitation.<br/>Process: 'SDLTradosStudio' (pid 2820)<br/>The following website provides more information on this technology limitation:<br/>https://www.ranorex.com/help/v8.0/technology-instrumentation/general-troubleshooting#GeneralTroubleshooting-.NETWinForms<br/>(This message is only shown once per report.)
+			</message>
+			<metainfo
+				limitationName="PotentiallyWinForms"
+				showInProgressDialog="False"
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\EditorUtility.cs"
+				codeline="49"
+				loglvl="Warn">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="00:16.003"
+			timeRelativeToTestModuleStartTime="00:16.003"
+			timeWallClock="15:39:55"
+			time="00:16.003"
+			level="Failure"
+			category="Fail"
+			errimg=".\Translat_2dd06907_4c7486e3_trace.jpg"
+			errthumb=".\Translat_2dd06907_4c7486e3_trace_thumb.jpg">
+			<message>
+				Term was not added into target segment
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="152"
+				loglvl="Failure">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="00:16.015"
+			timeRelativeToTestModuleStartTime="00:16.015"
+			timeWallClock="15:39:55"
+			time="00:16.015"
+			level="Error"
+			category="Module"
+			errimg=".\Translat_2dd06907_4c7486e3_trace.jpg"
+			errthumb=".\Translat_2dd06907_4c7486e3_trace_thumb.jpg">
+			<message>
+				The module has failed because one or more actions have failed.
+			</message>
+			<metainfo
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>

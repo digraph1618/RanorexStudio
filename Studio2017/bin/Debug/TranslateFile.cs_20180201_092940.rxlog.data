@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="1.4m"
+		durationms="82768"
+		type="root"
+		rid="1435c104be66f2f6"
+		totalerrorcount="1"
+		totalwarningcount="0"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="01.02.2018 09:29:47"
+		timestampiso="2018-02-01T07:29:47"
+		endtime="01.02.2018 09:31:10"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:34.203"
+			timeRelativeToTestModuleStartTime="00:34.203"
+			timeWallClock="09:30:21"
+			time="00:34.203"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Erste Schritte', expected='Erste Schritte').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="95"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="01:21.588"
+			timeRelativeToTestModuleStartTime="01:21.588"
+			timeWallClock="09:31:09"
+			time="01:21.588"
+			level="Success"
+			category="Validation">
+			<message>
+				Objects are equal (actual='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden', expected='Geeigneten Aufstellungsort f&#252;r Ihren Fotodrucker finden').
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="98"
+				loglvl="Success">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="01:22.768"
+			timeRelativeToTestModuleStartTime="01:22.768"
+			timeWallClock="09:31:10"
+			time="01:22.768"
+			level="Error"
+			category="Module">
+			<message>
+				The test run has been aborted by the user.
+			</message>
+			<metainfo
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>

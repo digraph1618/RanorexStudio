@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<report
+	progress="">
+	<activity
+		result="Failed"
+		duration="0ms"
+		durationms="0"
+		type="root"
+		rid="470ac70e737978"
+		totalerrorcount="1"
+		totalwarningcount="0"
+		totalsuccesstestcasecount="0"
+		totalfailedtestcasecount="0"
+		totalblockedtestcasecount="0"
+		childsuccesscount="0"
+		childfailedcount="0"
+		childblockedcount="0"
+		totalsuccesscount="0"
+		totalfailedcount="0"
+		totalblockedcount="0"
+		totalmaintenancemodecount="0"
+		user="astan"
+		rxversion="8.0.0.0"
+		host="CLJSDEASTAN01"
+		osversion="Windows 10 64bit"
+		runtimeversion="4.0.30319.42000"
+		procarch="32bit"
+		oslanguage="en-US"
+		dtnlanguage="ro-RO"
+		screenresolution="3840x1080"
+		timestamp="02.02.2018 14:34:53"
+		timestampiso="2018-02-02T12:34:53"
+		endtime="02.02.2018 14:35:10"
+		timeoutfactor="1"
+		module="TranslateFile">
+		<detail>
+			TranslateFile
+		</detail>
+		<varbindings>
+		</varbindings>
+		<item
+			timeRelativeToTestSuiteStartTime="00:17.140"
+			timeRelativeToTestModuleStartTime="00:17.141"
+			timeWallClock="14:35:10"
+			time="00:17.140"
+			level="Failure"
+			category="Fail"
+			errimg=".\Translat_ca87c6d8_de84ecd6_trace.jpg"
+			errthumb=".\Translat_ca87c6d8_de84ecd6_trace_thumb.jpg">
+			<message>
+				Term was not added into target segment
+			</message>
+			<metainfo
+				codefile="c:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\TranslateFile.cs"
+				codeline="152"
+				loglvl="Failure">
+			</metainfo>
+		</item>
+		<item
+			timeRelativeToTestSuiteStartTime="00:17.156"
+			timeRelativeToTestModuleStartTime="00:17.157"
+			timeWallClock="14:35:10"
+			time="00:17.156"
+			level="Error"
+			category="Module"
+			errimg=".\Translat_ca87c6d8_de84ecd6_trace.jpg"
+			errthumb=".\Translat_ca87c6d8_de84ecd6_trace_thumb.jpg">
+			<message>
+				The module has failed because one or more actions have failed.
+			</message>
+			<metainfo
+				loglvl="Error">
+			</metainfo>
+		</item>
+	</activity>
+</report>
