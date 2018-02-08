@@ -171,7 +171,13 @@ namespace Studio2017
 			}
 			
 			//Search and edit term
-			editor.checkIfTermExists(englishTerm, customTerm);
+			if (editor.checkIfTermExists(englishTerm, customTerm)) {
+				Report.Success("Term " + englishTerm + " was found in termbase search");
+			}
+			else {
+				Report.Failure("Term" + englishTerm + " was not found in termbase search");
+			}
+			
 			editor.viewTermDetails(customTerm);
 			editor.editTerm(editedTerm);
 			editor.goToTermRecognition();

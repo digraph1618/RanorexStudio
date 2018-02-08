@@ -4,15 +4,16 @@
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
+    <Element value="TranslateFile.cs" />
     <Element value="ProjectCreationUtility.cs" />
     <Element value="FilesUtility.cs" />
     <Element value="EditorUtility.cs" />
-    <Element value="TranslateFile.cs" />
     <Element value="BatchTaskUtility.cs" />
     <Element value="ViewsUtility.cs" />
     <Element value="Licensing.cs" />
     <Element value="CreateProject.cs" />
     <Element value="UtilityMethods.cs" />
+    <Element value="Studio2017Repository.rxrep" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">

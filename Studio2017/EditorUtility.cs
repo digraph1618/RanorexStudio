@@ -155,7 +155,9 @@ namespace Studio2017
         public bool checkIfTermExists(string term, string languageTerm) {
         	goToTermBaseSearch();
         	repo.StudioWindowForm.ContainerMainPanel.TermSearch.Click();
+        	repo.StudioWindowForm.ContainerMainPanel.TermSearchInfo.WaitForAttributeEqual(3000, "enabled", true);
         	repo.StudioWindowForm.ContainerMainPanel.TermSearch.TextValue = term;
+        	repo.StudioWindowForm.ContainerMainPanel.TermSearchInfo.WaitForAttributeEqual(3000, "enabled", true);
         	Keyboard.Press("{Return}");
         	repo.StudioWindowForm.ContainerMainPanel.TermNameInfo.Path = "//container[@controlname='_mainSplitContainer']//container[@controltypename='ViewPane']//container[@controltypename='DockableWindow' and @instance='1']//treeitem[@accessiblename='" + languageTerm + "']";
         	if (repo.StudioWindowForm.ContainerMainPanel.TermNameInfo.Exists(30000)) {
