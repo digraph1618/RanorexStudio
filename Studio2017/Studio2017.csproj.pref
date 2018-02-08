@@ -1,6 +1,6 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="TranslateFile.cs" />
+    <Element value="EditorUtility.cs" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
