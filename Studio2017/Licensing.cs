@@ -46,9 +46,10 @@ namespace Studio2017
 		/// that will in turn invoke this method.</remarks>
 		void ITestModule.Run()
 		{
-			Mouse.DefaultMoveTime = 300;
-			Keyboard.DefaultKeyPressTime = 100;
-			Delay.SpeedFactor = 1.0;
+            Mouse.DefaultMoveTime = 0;
+            Keyboard.DefaultKeyPressTime = 0;
+            Mouse.DefaultClickTime = 0;
+            Delay.SpeedFactor = 0.0;
 			
 			
 			string keyName = @"Software\SDL\Studio15";
