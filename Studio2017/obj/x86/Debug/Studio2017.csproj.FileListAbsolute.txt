@@ -1,9 +1,0 @@
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\obj\x86\Debug\Studio2017.csprojResolveAssemblyReference.cache
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\bin\Debug\Studio2017.rxtmg
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\bin\Debug\Studio2017.rxtst
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\bin\Debug\Studio2017.exe.config
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\bin\Debug\Studio2017.exe
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\bin\Debug\Studio2017.pdb
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\bin\Debug\Ranorex.Core.Resolver.dll
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\obj\x86\Debug\Studio2017.exe
-C:\Users\astan\Documents\Ranorex\RanorexStudio Projects\Studio2017\Studio2017\obj\x86\Debug\Studio2017.pdb
