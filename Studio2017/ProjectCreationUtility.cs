@@ -50,6 +50,14 @@ namespace Studio2017
         	repo.StudioWindowForm.IGNewProject.Click();
         }
         
+        public void saveTargetAs(string pathToSaveFile) {
+        	repo.StudioWindowForm.ApplicationMenuButton.Click();
+        	repo.StudioWindowForm.IGSaveTargetAs.Click();
+        	repo.SaveTargetAs.PathToSaveFileAsTarget.TextValue = pathToSaveFile;
+        	repo.SaveTargetAs.ButtonSave.Click();
+        }
+        
+        
         public void createProject(string projectName, string filesFolderPath, string tmtbLocation, string tmName, string termbaseName, string sourceLanguage, string targetLanguage) {
         	pressNext();
         	addProjectName(projectName);

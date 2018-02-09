@@ -205,7 +205,22 @@ namespace Studio2017
 			}
 			
 			
-//			//Finalize project
+			//Save Target As
+			projectCreationUtility.saveTargetAs(projectFilesFolder+fileName);
+			System.DateTime start = System.DateTime.Now;
+			while (!System.IO.File.Exists(projectFilesFolder+fileName) && System.DateTime.Now.Subtract(start).Seconds < 20) {
+				Console.WriteLine("Target file " + fileName + " is not present yet");
+			}
+			bool fileIsPresent = System.IO.File.Exists(projectFilesFolder+fileName);
+			if (fileIsPresent) {
+				Report.Success("Success", "File " + fileName + " is saved as target");
+			}
+			else {
+				Report.Failure("Fail", "File " + fileName + " is not saved as target");
+			}			
+			
+			
+			//Finalize project
 			batchTask.runBatchTask("Finalize", projectName);
 			editor.questionSaveChanges("Yes");
 			utilityMethods.pressNextWizard();
@@ -214,12 +229,12 @@ namespace Studio2017
 			
 			//Verify that project was finalised (files are saved as target)
 			foreach (string file in projectFilesList) {
-				System.DateTime start = System.DateTime.Now;
-				while (!System.IO.File.Exists(projectFilesFolder+file) && System.DateTime.Now.Subtract(start).Seconds < 20) {
+				System.DateTime finalizeStartTime = System.DateTime.Now;
+				while (!System.IO.File.Exists(projectFilesFolder+file) && System.DateTime.Now.Subtract(finalizeStartTime).Seconds < 20) {
 					Console.WriteLine("Target file " + file + " is not present yet");
 				}
-				bool fileIsPresent = System.IO.File.Exists(projectFilesFolder+file);
-				if (fileIsPresent) {
+				bool fileIsAvailable = System.IO.File.Exists(projectFilesFolder+file);
+				if (fileIsAvailable) {
 					Report.Success("Success", "File " + file + " is saved as target");
 				}
 				else {

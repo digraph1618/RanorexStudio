@@ -142,6 +142,15 @@ TkSuQmCC
 				/form[@controlname='StudioWindowForm']//contextmenu[@automationid='Navigation Menu']//menuitem[@name='Options']
 			</item>
 			<item
+			addcaps="menuitem,uiautomation,uiautomationinvoke"
+			capname="menuitem"
+			id="8f6e3490-7b9a-46bc-b3c6-546292ea5d43"
+			name="IGSaveTargetAs"
+			refimgid="3a6b4cd9-1ef6-4a33-bad6-d85fd68d743b"
+			searchtimeout="30000ms">
+				/form[@controlname='StudioWindowForm']//contextmenu[@automationid='Navigation Menu']//menuitem[@name='Save Target As']
+			</item>
+			<item
 			addcaps="tabpage,uiautomation"
 			capname="tabpage"
 			id="86f8c483-56cd-4efa-9ae4-af7c4b1d5eba"
@@ -1171,6 +1180,53 @@ IAfenzqB+3AxzvwdvMjZTPWSFCy1CfivRuGVVscuCV63CZxGQX1RrBxwFe5idFsWTzPXMZKh4aAq
 7a9/P7fS+SxQkZrKEdVSipPS2J24jAJlOlV9b+l08Kftd+GsDequw7Fu2HrcJgekpyxlZhdGO5y5
 DTVWONoF+9qgoOUH67U9kYG9hiectECpCbTnIV/3ndz6ADmVr1iReyEykFc3yJ5zsLM5zPZaH1sq
 XrLp0EM2aG+RntUiB+ZT6fxfIsRPbYnQgbXhGFYAAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<appfolder
+		addcaps="form,nativewindow"
+		capname="form"
+		id="87b2be2d-a9bd-4bd3-80c0-35fb573bc355"
+		isrooted="True"
+		name="SaveTargetAs"
+		refpath="/form[@title='Save Target As']"
+		searchtimeout="30000ms"
+		usecache="True">
+			<item
+			addcaps="text,nativewindow"
+			capname="text"
+			id="613e2ab2-5d46-4857-896e-3a76a489df94"
+			name="PathToSaveFileAsTarget"
+			refimgid="a0ec8ba6-154e-4a76-b1ad-91f320c14854"
+			searchtimeout="30000ms">
+				/form[@title='Save Target As']//text[@controlid='1148']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="541b686b-9b09-4332-aba9-0c5b81ff176b"
+			name="ButtonSave"
+			refimgid="1c6d2d02-9e19-4f52-b2b3-550254840630"
+			searchtimeout="30000ms">
+				/form[@title='Save Target As']//button[@text='&amp;Save']
+			</item>
+			<basepath>
+				/form[@title='Save Target As']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAJ/SURBVDhPbdPtS1NxFAfw+8e0+7vam8A2KujP
+KJIKMirJoGfKogJLTCqZOtvmNqdzT25jW+p005z5MKIQs7BemIRRFLQH25bmfMhv5/5+i5XtwHl3
+74d7zvleiTlMceYygLn1YN6HYL77YIF7kIN3IIdvQn5yDfLAZciR85CHz0ITOw3NSA00T49j11h1
+XFJ6bGC9ZjBnR3kktBOpgyZ6hpCTHJEUew9UJFsooFxtbf/CbPojjiU6CbkikKE6yEVEUmxuKHYH
+f1jr7YbWZ4U2YII22AFtqBX7+1tQPxNGdv0n9kRuC2TwAiHnCKklwOKDiqildHeBOTppnMc0ThuY
+5xFYXzOYvxGLuSQOPTPTONch95cQSTGHoFj8Auhy/Iu4SshC9huqJ+y0k1u03HpCrhJykQDjAFRE
+rd02LyG9hNgJsdByjUWkhYAkGmZjqOpvpuWWEKmiIwrFOIil7A/URhNQrJ6yyML3FL6u5pHbWMOJ
+yV5CaB/hGwS0j0FFaodeYnVjE+8zObxNZUSn09Qp6iTWtjZxeMSDuukQlvIZOnMDR6SK1gkIJIZ9
+XaNonH6Dz/kV1AyPw/R6nl7cwnJhDU0zCVS6Daj06vm4zNdEyF0C9FOoaJ0UiCGGo6Hn+JJfRWTx
+E/8i09w89jpdlBUrjWOicQwC8D7giAD+IG1xHAm8oPBsw/tuCQedEbpQH52ZAB44gXCgmNoSwHsS
+VcYJ5AobuDTyCgd6otB1D0DnCEHn9EPn8kDncQqgGP0dgOhT4Tl8WF7BNn/0/8qtF+hC4v8pC/Bu
+G6edjNJyh+nMalaCNI5IrRp9ETgzBUk/FS8LqK0i7X8jIrUc4am1xX8DnSy0nlE3EhoAAAAASUVO
+RK5CYII=
 			</icon>
 		</appfolder>
 		<basepath>

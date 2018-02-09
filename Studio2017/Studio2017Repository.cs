@@ -43,6 +43,7 @@ namespace Studio2017
         Studio2017RepositoryFolders.WarningSaveDocumentAppFolder _warningsavedocument;
         Studio2017RepositoryFolders.RightClickMenuAppFolder _rightclickmenu;
         Studio2017RepositoryFolders.BatchTaskMenuAppFolder _batchtaskmenu;
+        Studio2017RepositoryFolders.SaveTargetAsAppFolder _savetargetas;
 
         /// <summary>
         /// Gets the singleton class instance representing the Studio2017Repository element repository.
@@ -75,6 +76,7 @@ namespace Studio2017
             _warningsavedocument = new Studio2017RepositoryFolders.WarningSaveDocumentAppFolder(this);
             _rightclickmenu = new Studio2017RepositoryFolders.RightClickMenuAppFolder(this);
             _batchtaskmenu = new Studio2017RepositoryFolders.BatchTaskMenuAppFolder(this);
+            _savetargetas = new Studio2017RepositoryFolders.SaveTargetAsAppFolder(this);
         }
 
 #region Variables
@@ -284,6 +286,15 @@ namespace Studio2017
         {
             get { return _batchtaskmenu; }
         }
+
+        /// <summary>
+        /// The SaveTargetAs folder.
+        /// </summary>
+        [RepositoryFolder("87b2be2d-a9bd-4bd3-80c0-35fb573bc355")]
+        public virtual Studio2017RepositoryFolders.SaveTargetAsAppFolder SaveTargetAs
+        {
+            get { return _savetargetas; }
+        }
     }
 
     /// <summary>
@@ -449,6 +460,7 @@ namespace Studio2017
             RepoItemInfo _ignewInfo;
             RepoItemInfo _ignewprojectInfo;
             RepoItemInfo _igoptionsInfo;
+            RepoItemInfo _igsavetargetasInfo;
             RepoItemInfo _helpribbonInfo;
             RepoItemInfo _filesviewInfo;
             RepoItemInfo _includesubfoldersInfo;
@@ -478,6 +490,7 @@ namespace Studio2017
                 _ignewInfo = new RepoItemInfo(this, "IGNew", ".//contextmenu[@automationid='Navigation Menu']//menuitem[@name='New']", 30000, null, "a63e92de-4873-4c20-b3c6-0a6892e44587");
                 _ignewprojectInfo = new RepoItemInfo(this, "IGNewProject", ".//container[@automationid='Content Area Group 1']//menuitem[@name='New Project']", 30000, null, "e5e0c52d-55d7-489f-bb27-84ffd4b0bcdc");
                 _igoptionsInfo = new RepoItemInfo(this, "IGOptions", ".//contextmenu[@automationid='Navigation Menu']//menuitem[@name='Options']", 30000, null, "db45a931-662b-4c10-8431-e4a1749f3789");
+                _igsavetargetasInfo = new RepoItemInfo(this, "IGSaveTargetAs", ".//contextmenu[@automationid='Navigation Menu']//menuitem[@name='Save Target As']", 30000, null, "8f6e3490-7b9a-46bc-b3c6-546292ea5d43");
                 _helpribbonInfo = new RepoItemInfo(this, "HelpRibbon", ".//container[@automationid='Ribbon Tabs']//tabpage[@automationid='helpRibbon']", 30000, null, "86f8c483-56cd-4efa-9ae4-af7c4b1d5eba");
                 _filesviewInfo = new RepoItemInfo(this, "FilesView", ".//container[@controlname='_mainPanel']//container[@name='Files']", 30000, null, "f19242a2-a10f-4fc6-8716-c71d97603e41");
                 _includesubfoldersInfo = new RepoItemInfo(this, "IncludeSubfolders", ".//checkbox[@controlname='_showSubFolders']", 30000, null, "2e851035-b244-4732-9dbf-04e482e921f4");
@@ -660,6 +673,30 @@ namespace Studio2017
                 get
                 {
                     return _igoptionsInfo;
+                }
+            }
+
+            /// <summary>
+            /// The IGSaveTargetAs item.
+            /// </summary>
+            [RepositoryItem("8f6e3490-7b9a-46bc-b3c6-546292ea5d43")]
+            public virtual Ranorex.MenuItem IGSaveTargetAs
+            {
+                get
+                {
+                    return _igsavetargetasInfo.CreateAdapter<Ranorex.MenuItem>(true);
+                }
+            }
+
+            /// <summary>
+            /// The IGSaveTargetAs item info.
+            /// </summary>
+            [RepositoryItemInfo("8f6e3490-7b9a-46bc-b3c6-546292ea5d43")]
+            public virtual RepoItemInfo IGSaveTargetAsInfo
+            {
+                get
+                {
+                    return _igsavetargetasInfo;
                 }
             }
 
@@ -2903,6 +2940,98 @@ namespace Studio2017
                 get
                 {
                     return _runtaskInfo;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The SaveTargetAsAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("87b2be2d-a9bd-4bd3-80c0-35fb573bc355")]
+        public partial class SaveTargetAsAppFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _pathtosavefileastargetInfo;
+            RepoItemInfo _buttonsaveInfo;
+
+            /// <summary>
+            /// Creates a new SaveTargetAs  folder.
+            /// </summary>
+            public SaveTargetAsAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("SaveTargetAs", "/form[@title='Save Target As']", parentFolder, 30000, null, true, "87b2be2d-a9bd-4bd3-80c0-35fb573bc355", "")
+            {
+                _pathtosavefileastargetInfo = new RepoItemInfo(this, "PathToSaveFileAsTarget", ".//text[@controlid='1148']", 30000, null, "613e2ab2-5d46-4857-896e-3a76a489df94");
+                _buttonsaveInfo = new RepoItemInfo(this, "ButtonSave", ".//button[@text='&Save']", 30000, null, "541b686b-9b09-4332-aba9-0c5b81ff176b");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("87b2be2d-a9bd-4bd3-80c0-35fb573bc355")]
+            public virtual Ranorex.Form Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.Form>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("87b2be2d-a9bd-4bd3-80c0-35fb573bc355")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The PathToSaveFileAsTarget item.
+            /// </summary>
+            [RepositoryItem("613e2ab2-5d46-4857-896e-3a76a489df94")]
+            public virtual Ranorex.Text PathToSaveFileAsTarget
+            {
+                get
+                {
+                    return _pathtosavefileastargetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The PathToSaveFileAsTarget item info.
+            /// </summary>
+            [RepositoryItemInfo("613e2ab2-5d46-4857-896e-3a76a489df94")]
+            public virtual RepoItemInfo PathToSaveFileAsTargetInfo
+            {
+                get
+                {
+                    return _pathtosavefileastargetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The ButtonSave item.
+            /// </summary>
+            [RepositoryItem("541b686b-9b09-4332-aba9-0c5b81ff176b")]
+            public virtual Ranorex.Button ButtonSave
+            {
+                get
+                {
+                    return _buttonsaveInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The ButtonSave item info.
+            /// </summary>
+            [RepositoryItemInfo("541b686b-9b09-4332-aba9-0c5b81ff176b")]
+            public virtual RepoItemInfo ButtonSaveInfo
+            {
+                get
+                {
+                    return _buttonsaveInfo;
                 }
             }
         }
