@@ -19,6 +19,12 @@ rxversion="8.0">
 			name="TestCase">
 			</testcase>
 			<testmodule
+			id="609d6be7-e261-4b3e-bfb4-8f5630df5362"
+			name="InstallStudio"
+			ref="bc48316b-4bf1-4786-aafe-76f828c6ea3e"
+			type="UserCode">
+			</testmodule>
+			<testmodule
 			id="7cca3c5a-a4f9-4104-9ae6-5c4b96fde43a"
 			name="CreateProject"
 			ref="1f59daa3-2a41-4297-ad17-be0f7757bd47"
@@ -55,6 +61,10 @@ rxversion="8.0">
 					<testcase
 					id="47f2ba16-bf88-4c2f-ac69-22ec384f77ef"
 					name="TestCase">
+						<testmodule
+						id="609d6be7-e261-4b3e-bfb4-8f5630df5362"
+						name="InstallStudio">
+						</testmodule>
 						<testmodule
 						id="8a17ff9d-01ca-432a-9db3-d79cae997433"
 						name="Licensing">

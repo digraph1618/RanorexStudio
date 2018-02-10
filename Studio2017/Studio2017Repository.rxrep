@@ -1229,6 +1229,144 @@ G6edjNJyh+nMalaCNI5IrRp9ETgzBUk/FS8LqK0i7X8jIrUc4am1xX8DnSy0nlE3EhoAAAAASUVO
 RK5CYII=
 			</icon>
 		</appfolder>
+		<appfolder
+		addcaps="form,nativewindow"
+		capname="form"
+		id="584a59ad-f1cf-44e6-983e-81190d060eab"
+		isrooted="True"
+		name="StudioInstallation"
+		searchtimeout="30000ms"
+		usecache="True">
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="e29205c3-cac0-4261-b6cc-c309b1486b36"
+			name="Accept"
+			refimgid="5ad1fce7-f0a5-4e81-890a-bf528b526565"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//button[@text='Accept']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="46aa4bc6-cd90-495b-b786-b9952404f327"
+			name="Browse"
+			refimgid="83d047b2-677a-4e48-8b0f-d469ebaa1d8d"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//button[@text='Bro&amp;wse...']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="86e096de-e052-4d52-aeb2-40430c23cc11"
+			name="Install"
+			refimgid="411497c6-563c-4d37-8f22-f24fa4b066a1"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//button[@text='Install']
+			</item>
+			<item
+			addcaps="text,control,nativewindow"
+			capname="text"
+			id="a4639ac6-50c2-4048-846c-20f03edb321a"
+			name="PleaseWait"
+			refimgid="ec14460d-ba9b-4737-8033-a2be4a49ff6e"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//container[@controlname='counterPanel']//text[@controlname='counter']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="f3b66c86-482a-41c4-a6d3-586b6baa5034"
+			name="ButtonNo"
+			refimgid="315be7cd-0ba5-4de6-ae55-5553efa3ae47"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//button[@text='&amp;No']
+			</item>
+			<folder
+			capname="container"
+			id="fb304da3-bd0e-40a7-98d3-e58a3630a625"
+			isrooted="True"
+			name="BackPanel"
+			searchtimeout="30000ms"
+			usecache="False">
+				<item
+				addcaps="checkbox,control,nativewindow"
+				capname="checkbox"
+				id="50069942-0e70-4ab3-8e64-56ac2bc7304b"
+				name="CheckBoxAccept"
+				refimgid="a1ee41bb-690f-429e-a792-c9ea7ebe7a55"
+				searchtimeout="30000ms">
+					/form[@title~'SDL Trados Studio']/container[@controlname='backPanel']//checkbox[@controlname='checkBoxAccept']
+				</item>
+				<item
+				addcaps="button,control,nativewindow"
+				capname="button"
+				id="3751bc4a-c559-46d5-b425-44e7885015a2"
+				name="ButtonNext"
+				refimgid="300348ff-c900-42d2-a6bb-21df07de7dea"
+				searchtimeout="30000ms">
+					/form[@title~'SDL Trados Studio']/container[@controlname='backPanel']//button[@controlname='buttonNext']
+				</item>
+				<item
+				addcaps="button,control,nativewindow"
+				capname="button"
+				id="10ee7f91-31c2-4573-9c1a-ed64d6485700"
+				name="CancelButton"
+				refimgid="2bfa69ba-3be4-4ca4-ab7e-34fb071e1fb1"
+				searchtimeout="30000ms">
+					/form[@title~'SDL Trados Studio']/container[@controlname='backPanel']//button[@controlname='cancelButton']
+				</item>
+				<item
+				addcaps="text,control,nativewindow"
+				capname="text"
+				id="bac21f2a-c87a-47ca-9853-91a6c8277f27"
+				name="WaitForSetup"
+				refimgid="a3ee376e-d185-44e7-8d4a-7d7f9ed9c873"
+				searchtimeout="30000ms">
+					/form[@title~'SDL Trados Studio']/container[@controlname='backPanel']//text[@controlname='titleLabel' and @text='Please wait while setup configures the following components as required.']
+				</item>
+				<basepath>
+					/form[@title~'SDL Trados Studio']/container[@controlname='backPanel']
+				</basepath>
+			</folder>
+			<item
+			addcaps="text,nativewindow"
+			capname="text"
+			id="0879ebed-91fe-4d27-aeff-eb1c4d7c0c93"
+			name="SetupCompleted"
+			refimgid="a6384791-2e87-4c6c-80da-9e0fcf74f1bc"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//text[@text='Setup has completed successfully.']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="3fdcf139-97dc-459e-8be5-997f54f328be"
+			name="ButtonOK"
+			refimgid="524cd400-f769-490c-b166-8cb2b598d5d6"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//button[@text='OK']
+			</item>
+			<basepath>
+				/form[@title~'SDL Trados Studio']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAJ/SURBVDhPbdPtS1NxFAfw+8e0+7vam8A2KujP
+KJIKMirJoGfKogJLTCqZOtvmNqdzT25jW+p005z5MKIQs7BemIRRFLQH25bmfMhv5/5+i5XtwHl3
+74d7zvleiTlMceYygLn1YN6HYL77YIF7kIN3IIdvQn5yDfLAZciR85CHz0ITOw3NSA00T49j11h1
+XFJ6bGC9ZjBnR3kktBOpgyZ6hpCTHJEUew9UJFsooFxtbf/CbPojjiU6CbkikKE6yEVEUmxuKHYH
+f1jr7YbWZ4U2YII22AFtqBX7+1tQPxNGdv0n9kRuC2TwAiHnCKklwOKDiqildHeBOTppnMc0ThuY
+5xFYXzOYvxGLuSQOPTPTONch95cQSTGHoFj8Auhy/Iu4SshC9huqJ+y0k1u03HpCrhJykQDjAFRE
+rd02LyG9hNgJsdByjUWkhYAkGmZjqOpvpuWWEKmiIwrFOIil7A/URhNQrJ6yyML3FL6u5pHbWMOJ
+yV5CaB/hGwS0j0FFaodeYnVjE+8zObxNZUSn09Qp6iTWtjZxeMSDuukQlvIZOnMDR6SK1gkIJIZ9
+XaNonH6Dz/kV1AyPw/R6nl7cwnJhDU0zCVS6Daj06vm4zNdEyF0C9FOoaJ0UiCGGo6Hn+JJfRWTx
+E/8i09w89jpdlBUrjWOicQwC8D7giAD+IG1xHAm8oPBsw/tuCQedEbpQH52ZAB44gXCgmNoSwHsS
+VcYJ5AobuDTyCgd6otB1D0DnCEHn9EPn8kDncQqgGP0dgOhT4Tl8WF7BNn/0/8qtF+hC4v8pC/Bu
+G6edjNJyh+nMalaCNI5IrRp9ETgzBUk/FS8LqK0i7X8jIrUc4am1xX8DnSy0nlE3EhoAAAAASUVO
+RK5CYII=
+			</icon>
+		</appfolder>
 		<basepath>
 		</basepath>
 	</rootfolder>

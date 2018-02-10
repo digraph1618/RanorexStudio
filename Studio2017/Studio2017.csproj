@@ -104,6 +104,8 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
@@ -113,6 +115,9 @@
   <ItemGroup>
     <Compile Include="BatchTaskUtility.cs">
       <id>16163525-79ba-40e1-92a2-7c7399389378</id>
+    </Compile>
+    <Compile Include="InstallStudio.cs">
+      <id>1302bc17-ea09-46cd-b949-d203e6e12baf</id>
     </Compile>
     <Compile Include="EditorUtility.cs">
       <id>320c1a35-472d-4c53-8058-ccf1226f9016</id>
