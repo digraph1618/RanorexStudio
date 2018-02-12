@@ -104,10 +104,9 @@ namespace Studio2017
         }
         
         public void deleteRegistry(string registryPath, string entry) {
-        
            using (Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(registryPath, true))
 			{
-			if (key.SubKeyCount == 0) {}
+			if (key == null || key.SubKeyCount == 0) {}
 			
 			else {
 				key.DeleteSubKey(entry);
@@ -121,8 +120,25 @@ namespace Studio2017
         	string projectName = "AutomationProject" + projectNr.ToString();
         	return projectName;
         }
-
-//        public string getFileName() {
-//        }
+        
+        public void installStudio(string studioExe) {
+        	Host.Local.RunApplication(studioExe);
+            
+            repo.StudioInstallation.Accept.Click();
+            
+            repo.StudioInstallation.BackPanel.CheckBoxAcceptInfo.WaitForExists(60000);
+            repo.StudioInstallation.BackPanel.CheckBoxAcceptInfo.WaitForAttributeEqual(5000, "enabled", true);
+            repo.StudioInstallation.BackPanel.CheckBoxAccept.Click();
+            
+            repo.StudioInstallation.BackPanel.ButtonNextInfo.WaitForAttributeEqual(5000, "enabled", true);
+            repo.StudioInstallation.BackPanel.ButtonNext.Click();
+			
+            
+            repo.StudioInstallation.SetupCompletedInfo.WaitForExists(12000000);
+            
+            repo.StudioInstallation.ButtonOK.Click();
+        
+        
+        }
 	  }
     } 

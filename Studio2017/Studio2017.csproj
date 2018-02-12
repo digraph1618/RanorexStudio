@@ -116,7 +116,7 @@
     <Compile Include="BatchTaskUtility.cs">
       <id>16163525-79ba-40e1-92a2-7c7399389378</id>
     </Compile>
-    <Compile Include="InstallStudio.cs">
+    <Compile Include="PrepareStudio.cs">
       <id>1302bc17-ea09-46cd-b949-d203e6e12baf</id>
     </Compile>
     <Compile Include="EditorUtility.cs">

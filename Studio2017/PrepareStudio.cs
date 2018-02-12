@@ -27,16 +27,17 @@ namespace Studio2017
     /// Description of CopyStudioBuild.
     /// </summary>
     [TestModule("BC48316B-4BF1-4786-AAFE-76F828C6EA3E", ModuleType.UserCode, 1)]
-    public class InstallStudio : ITestModule
+    public class PrepareStudio : ITestModule
     {
         /// <summary>
         /// Constructs a new instance.
         /// </summary>
-        public InstallStudio()
+        public PrepareStudio()
         {
             // Do not delete - a parameterless constructor is required!
         }
 		private static Studio2017Repository repo = Studio2017Repository.Instance;
+		UtilityMethods utilityMethods = new UtilityMethods();
         
 		string localBuildFolder = @"C:\Automation\Builds\";
 		string buildsServer = @"\\sheffdevproj1.global.sdl.corp\BuildDrop\";
@@ -50,37 +51,29 @@ namespace Studio2017
             Mouse.DefaultClickTime = 0;
             Delay.SpeedFactor = 0.0;
             
-            var studioDirectories = System.IO.Directory.GetDirectories(@"\\sheffdevproj1.global.sdl.corp\BuildDrop", "TranslationStudio.Master_15");
+            //Copy Studio build
+            if (!Directory.Exists(localBuildFolder)) {
+            	Directory.CreateDirectory(localBuildFolder);
+            }
             
-            var directory = new System.IO.DirectoryInfo(buildsServer).GetDirectories(studioFolderPattern).OrderBy(folder => folder.LastWriteTime).ToList();
+            var directory = new DirectoryInfo(buildsServer).GetDirectories(studioFolderPattern).OrderBy(folder => folder.LastWriteTime).ToList();
             int lastBuild = directory.Count;
             string buildFolder = directory[lastBuild-1].FullName;
             
-            var studioExecutable = new System.IO.DirectoryInfo(@buildFolder).GetFiles(studioPattern);
+            var studioExecutable = new DirectoryInfo(@buildFolder).GetFiles(studioPattern);
             
             var sourceFolder = @buildFolder + @"\" + studioExecutable[0];
             var localDestinationFolder = @localBuildFolder+studioExecutable[0];
             
-            var localStudioExecutable = new System.IO.DirectoryInfo(localBuildFolder).GetFiles(studioPattern);
-            
+
             File.Copy(sourceFolder, localDestinationFolder, true);
             
-            Host.Local.RunApplication(localBuildFolder + "SDLTradosStudio2018_14666.exe");
             
-            repo.StudioInstallation.Accept.Click();
+            var localStudioExecutable = new DirectoryInfo(localBuildFolder).GetFiles(studioPattern).OrderBy(file => file.LastWriteTime).ToList();
+            int fileNr = localStudioExecutable.Count;
             
-            repo.StudioInstallation.BackPanel.CheckBoxAcceptInfo.WaitForExists(60000);
-            repo.StudioInstallation.BackPanel.CheckBoxAcceptInfo.WaitForAttributeEqual(5000, "enabled", true);
-            repo.StudioInstallation.BackPanel.CheckBoxAccept.Click();
-            
-            repo.StudioInstallation.BackPanel.ButtonNextInfo.WaitForAttributeEqual(5000, "enabled", true);
-            repo.StudioInstallation.BackPanel.ButtonNext.Click();
-			
-            
-            repo.StudioInstallation.SetupCompletedInfo.WaitForExists(12000000);
-            
-            repo.StudioInstallation.ButtonOK.Click();
-            
+            //Install Studio
+            utilityMethods.installStudio(localStudioExecutable[fileNr - 1].FullName);  
         }
     }
 }

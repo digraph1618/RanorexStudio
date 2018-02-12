@@ -26,24 +26,15 @@ namespace Studio2017
 	[TestModule("887A96F6-73ED-4777-86F6-486EBE7ED380", ModuleType.UserCode, 1)]
 	public class Licensing : ITestModule
 	{
-		/// <summary>
-		/// Constructs a new instance.
-		/// </summary>
+
 		public Licensing()
 		{
 			// Do not delete - a parameterless constructor is required!
-
 		}
 
 		private static Studio2017Repository repo = Studio2017Repository.Instance;
 		UtilityMethods utilityMethods = new UtilityMethods();
 		
-		/// <summary>
-		/// Performs the playback of actions in this module.
-		/// </summary>
-		/// <remarks>You should not call this method directly, instead pass the module
-		/// instance to the <see cref="TestModuleRunner.Run(ITestModule)"/> method
-		/// that will in turn invoke this method.</remarks>
 		void ITestModule.Run()
 		{
             Mouse.DefaultMoveTime = 0;
@@ -54,6 +45,7 @@ namespace Studio2017
 			
 			string keyName = @"Software\SDL\Studio15";
 			string registryEntry = "MachineSupport";
+			string licenseServer = "clujhv28";
 			
 			
 			//Delete registry for First step
@@ -65,7 +57,7 @@ namespace Studio2017
 			
 			
 			if (repo.LicenseManagerForm.ButtonActivateButtonInfo.Exists(5000)) {
-				utilityMethods.studioActivation("clujhv28");
+				utilityMethods.studioActivation(licenseServer);
 			}
 			
 			//First setup
@@ -87,12 +79,12 @@ namespace Studio2017
 			if (repo.LicenseManagerForm.ButtonDeactivateButtonInfo.Exists(5000)) {
 			
 				utilityMethods.deactivateButton();
-				utilityMethods.studioActivation("clujhv28");
+				utilityMethods.studioActivation(licenseServer);
 			}
 			
 			else {
 				
-				utilityMethods.studioActivation("clujhv28");
+				utilityMethods.studioActivation(licenseServer);
 			}
 			
 			utilityMethods.closeStudio();
