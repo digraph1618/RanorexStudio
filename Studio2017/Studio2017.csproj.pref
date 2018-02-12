@@ -1,9 +1,10 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="Studio2017.rxtst" />
+    <Element value="Recording1.rxrec" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
+    <Element value="CreateProject.cs" />
     <Element value="TranslateFile.cs" />
     <Element value="ProjectCreationUtility.cs" />
     <Element value="FilesUtility.cs" />
@@ -11,10 +12,9 @@
     <Element value="BatchTaskUtility.cs" />
     <Element value="ViewsUtility.cs" />
     <Element value="Licensing.cs" />
-    <Element value="Studio2017.rxtst" />
     <Element value="UtilityMethods.cs" />
     <Element value="PrepareStudio.cs" />
-    <Element value="CreateProject.cs" />
+    <Element value="Recording1.rxrec" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">
