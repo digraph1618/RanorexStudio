@@ -17,7 +17,7 @@ rxversion="8.0">
 			</testmodule>
 			<testcase
 			id="47f2ba16-bf88-4c2f-ac69-22ec384f77ef"
-			name="TestCase">
+			name="SanityChecks">
 			</testcase>
 			<testmodule
 			enabled="False"
@@ -62,7 +62,7 @@ rxversion="8.0">
 				name="Studio2017">
 					<testcase
 					id="47f2ba16-bf88-4c2f-ac69-22ec384f77ef"
-					name="TestCase">
+					name="SanityChecks">
 						<testmodule
 						id="609d6be7-e261-4b3e-bfb4-8f5630df5362"
 						name="PrepareStudio">
