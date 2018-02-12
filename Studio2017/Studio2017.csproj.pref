@@ -1,6 +1,6 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="Recording1.rxrec" />
+    <Element value="Studio2017.rxtst" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
@@ -14,7 +14,7 @@
     <Element value="Licensing.cs" />
     <Element value="UtilityMethods.cs" />
     <Element value="PrepareStudio.cs" />
-    <Element value="Recording1.rxrec" />
+    <Element value="Studio2017.rxtst" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">
