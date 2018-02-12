@@ -6,7 +6,7 @@ rxversion="8.0">
 			<testcase
 			id="05891845-c9a6-456c-a7c8-674ad8bfd1cb"
 			name="Studio2017"
-			reportlevel="Info;20">
+			reportlevel="Debug;10">
 			</testcase>
 			<testmodule
 			enabled="False"
@@ -16,6 +16,7 @@ rxversion="8.0">
 			type="UserCode">
 			</testmodule>
 			<testcase
+			errorbehavior="Stop"
 			id="47f2ba16-bf88-4c2f-ac69-22ec384f77ef"
 			name="SanityChecks">
 			</testcase>
