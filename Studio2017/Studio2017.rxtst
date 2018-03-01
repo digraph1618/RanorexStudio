@@ -9,6 +9,7 @@ rxversion="8.0">
 			reportlevel="Debug;10">
 			</testcase>
 			<testmodule
+			enabled="False"
 			id="1ba578bd-9451-4126-927b-d86e1ea9b1ba"
 			name="PublishProject"
 			ref="c1c0adf0-85b7-4189-bf81-0e6f2f2feaa2"
@@ -41,7 +42,6 @@ rxversion="8.0">
 			type="UserCode">
 			</testmodule>
 			<testmodule
-			enabled="True"
 			id="8a17ff9d-01ca-432a-9db3-d79cae997433"
 			name="Licensing"
 			ref="887a96f6-73ed-4777-86f6-486ebe7ed380"
