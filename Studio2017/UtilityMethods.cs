@@ -8,11 +8,15 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Drawing;
 using System.Threading;
 using WinForms = System.Windows.Forms;
+using System.Linq;
+using System.IO;
+using System.IO.Compression;
 
 using Ranorex;
 using Ranorex.Core;
@@ -44,6 +48,13 @@ namespace Studio2017
         
         private static Studio2017Repository repo = Studio2017Repository.Instance;
         
+        public void setTestRunSettings() {
+            Mouse.DefaultMoveTime = 0;
+            Keyboard.DefaultKeyPressTime = 0;
+            Mouse.DefaultClickTime = 0;
+            Delay.SpeedFactor = 0.0;
+        }
+        
         
         public void studioActivation(string activationServer) {
         
@@ -72,13 +83,19 @@ namespace Studio2017
 			repo.StudioWindowForm.Close.Click();
         }
         
-        public void startStudio() {
-        
-			Host.Local.RunApplication(@"C:\Program Files (x86)\SDL\SDL Trados Studio\Studio15\SDLTradosStudio.exe");
-			}
+        public void startStudio(bool firstTime) {
+        	
+        	if (firstTime) {
+				Host.Local.RunApplication(Constants.StudioAppPath);
+        	}
+        	else {
+			ProcessStartInfo startInfo = new ProcessStartInfo(Constants.StudioAppPath);
+			startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+			Process.Start(startInfo);        	
+        	}
+		}
         
         public void goToProductActivation() {
-        
         	repo.StudioWindowForm.HelpRibbon.Click();
 			repo.StudioWindowForm.ProductActivation.Click();
        }
@@ -121,6 +138,96 @@ namespace Studio2017
         	return projectName;
         }
         
+        public void goToServers() {
+        	repo.StudioWindowForm.ApplicationMenuButton.Click();
+        	repo.StudioWindowForm.IGSetup.Click();
+        	repo.StudioWindowForm.IGServers.Click();
+        }
+        
+        public void addServerButton() {
+        	repo.ServersDialog.AddServer.Click();
+        }
+        
+        public void closeServersDialog() {
+        	repo.ServersDialog.CloseButton.Click();
+        }
+        
+        public void provideGSDetails(string serverAddress, string username, string password) {
+        
+        	repo.AddEditServerDialog.ServerAddress.TextValue = serverAddress;
+        	repo.AddEditServerDialog.UseSDLAuthentication.Click();
+        	repo.AddEditServerDialog.UserName.TextValue = username;
+        	repo.AddEditServerDialog.Password.TextValue = password;
+        }
+        
+        public void saveGSServer() {
+        	repo.AddEditServerDialog.OkButton.Click();
+        	repo.ServersDialog.GSNameInfo.WaitForExists(15000);
+        }
+        
+        public void deleteGSServer(string serverAddress) {
+            IList<Ranorex.TreeItem> listedServers = repo.ServersDialog.Self.FindDescendants<Ranorex.TreeItem>();
+        	//var extractedServers = new List<string>();	
+        	foreach (Ranorex.TreeItem servers in listedServers) {
+        		if (servers.Text.Contains(serverAddress)) {
+        			servers.Click();
+        			break;
+        		}
+        		else {
+        		//Server is not in the list
+        		}
+        	}
+        	repo.ServersDialog.DeleteGSServer.Click();
+        	repo.Question.ButtonYes.Click();
+        }
+        
+        public void addGSServer(string serverAddress, string username, string password) {
+        	goToServers();
+        	if (gsServerExists(serverAddress) == false) {
+        	addServerButton();
+        	provideGSDetails(serverAddress, username, password);
+        	saveGSServer();
+        	   if (gsServerExists(serverAddress) == true) {
+        		   Report.Success("Success", "Server " + serverAddress + " was added");
+        	   }
+        	   else {
+        		   Report.Failure("Fail", "Server " + serverAddress + " was not added");
+        	   }
+        	   closeServersDialog();
+        	}
+        	else {
+        		deleteGSServer(serverAddress);
+        		addServerButton();
+        		provideGSDetails(serverAddress, username, password);
+        		saveGSServer();
+      			if (gsServerExists(serverAddress) == true) {
+        		   	Report.Success("Success", "Server " + serverAddress + " was added");
+        	   	}
+        	   	else {
+        		   	Report.Failure("Fail", "Server " + serverAddress + " was not added");
+        	   	}
+        		closeServersDialog();
+        	}
+        }
+        
+        public bool gsServerExists(string gsServer) {
+        	repo.ServersDialog.AddServerInfo.WaitForExists(10000);
+        	bool serverExists = false;
+            IList<Ranorex.TreeItem> listedServers = repo.ServersDialog.Self.FindDescendants<Ranorex.TreeItem>();
+        	//var extractedServers = new List<string>();	
+        	foreach (Ranorex.TreeItem servers in listedServers) {
+        		if (servers.Text.Contains(gsServer)) {
+        		serverExists = true;
+        		break;
+        		}
+        		else {
+        		serverExists = false;
+        		}
+        	}
+			return serverExists;       	
+        }
+        
+        
         public void installStudio(string studioExe) {
         	Host.Local.RunApplication(studioExe);
             
@@ -137,8 +244,15 @@ namespace Studio2017
             repo.StudioInstallation.SetupCompletedInfo.WaitForExists(12000000);
             
             repo.StudioInstallation.ButtonOK.Click();
+        }
         
         
+        public void deleteStudioProjects(string projectsFolder) {    
+        var directory = new DirectoryInfo(projectsFolder).GetDirectories(Constants.AutomationProjects);
+        foreach (DirectoryInfo dir in directory) {
+        	
+        	dir.Delete(true);
+          }
         }
 	  }
     } 

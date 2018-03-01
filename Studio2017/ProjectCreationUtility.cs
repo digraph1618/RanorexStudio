@@ -58,15 +58,21 @@ namespace Studio2017
         }
         
         
-        public void createProject(string projectName, string filesFolderPath, string tmtbLocation, string tmName, string termbaseName, string sourceLanguage, string targetLanguage) {
+        public void createProject(string projectName, bool publishGS, string GSServer, string serverLocation, string filesFolderPath, string tmtbLocation, string tmName, string termbaseName, string sourceLanguage, string targetLanguage) {
         	pressNext();
         	addProjectName(projectName);
+        	publishOnGroupShare(publishGS, GSServer, serverLocation);
         	pressNext();
         	
         	//Add source and target languages
         	addSourceLanguage(sourceLanguage);
         	addTargetLanguage(targetLanguage);
         	pressNext();
+        	
+        	//Handle Planning and Assignments page
+        	if (publishGS == true) {
+        	pressNext();
+        	}
         	
         	//Add files
         	addFilesFolder(filesFolderPath);
@@ -105,7 +111,7 @@ namespace Studio2017
         
         public void pressFinish() {
         	repo.ProjectWizard.FinishProjectInfo.WaitForExists(10000);
-        	repo.ProjectWizard.FinishProjectInfo.WaitForAttributeEqual(10000, "enabled", true);
+        	repo.ProjectWizard.FinishProjectInfo.WaitForAttributeEqual(20000, "enabled", true);
         	repo.ProjectWizard.FinishProject.Click();
         }
         
@@ -147,6 +153,12 @@ namespace Studio2017
         	repo.ProjectWizard.DisplayedTMsInfo.WaitForExists(10000);
         }
         
+        public void addServerBasedTM(string tmName) {
+        
+        //to be completed
+        
+        }
+        
         public void addTermbase(string tmtbLocation, string termbaseName) {
             repo.ProjectWizard.Use.Click();
         	repo.SDLTradosStudio.FileBasedTMTB.Click();
@@ -154,6 +166,37 @@ namespace Studio2017
         	repo.OpenFileBasedTMTB.OpenTMTB.Click();
         	repo.ProjectWizard.DisplayedTermbasesInfo.Path = "//form[@automationid='Window_1']//container[@automationid='DockPanel_1']//container[@controlname='ProjectTermbasesWizardPageControl']//container[@controlname='_termbasesGrid']//text[@automationid='[Editor] Edit Area' and @uiautomationvaluevalue~'" + termbaseName + "']";
         	repo.ProjectWizard.DisplayedTermbasesInfo.WaitForExists(10000);
+        }
+        
+        public void publishOnGroupShare(bool publishOnGS, string gsServer, string serverLocation) {
+        	repo.ProjectWizard.PublishGroupShareInfo.WaitForExists(5000);
+        	if (publishOnGS) {
+        		if (repo.ProjectWizard.PublishGroupShare.Element.GetAttributeValue("checked").Equals(true)) {
+        			addServerAndLocation(gsServer, serverLocation);
+        		}
+        		else {
+        			repo.ProjectWizard.PublishGroupShare.Click();
+					addServerAndLocation(gsServer, serverLocation);
+        		}
+        	}
+        	else {
+        		if (repo.ProjectWizard.PublishGroupShare.Element.GetAttributeValue("checked").Equals(true)) {
+        			repo.ProjectWizard.PublishGroupShare.Click();
+        		}
+        		else {
+        		//Publish on GS server checkbox is disabled
+        		}
+        	}
+        }
+        
+        public void addServerAndLocation(string gsServer, string serverLocation) {
+        	repo.ServerList.ServerSelectionInfo.Path = "//list[@controlid='1000']//listitem[@text~'" + gsServer + "']";
+        	repo.BrowserDialog.ServerLocationInfo.Path = "//form[@controlname='BrowserDialog']//treeitem[@automationid='0']//text[@automationid='0']//text[@uiautomationvaluevalue='" + serverLocation + "']";
+            repo.ProjectWizard.ServerCombobox.Click();
+            repo.ServerList.ServerSelection.Click();
+        	repo.ProjectWizard.BrowseServerLocation.Click();
+        	repo.BrowserDialog.ServerLocation.Click();
+        	repo.BrowserDialog.OkButton.Click();
         }
     }
 }

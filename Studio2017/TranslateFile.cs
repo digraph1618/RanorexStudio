@@ -40,41 +40,27 @@ namespace Studio2017
         ViewsUtility views = new ViewsUtility();
         EditorUtility editor = new EditorUtility();
         BatchTaskUtility batchTask = new BatchTaskUtility();
-        List<string> projectFilesList = new List<string>(new string[] { "SamplePhotoPrinter.doc", "SamplePresentation.pptx", "SampleXML_DITA.xml", "SecondSample.docx", "TryPerfectMatch.doc" });
+        List<string> projectFilesList = new List<string>(new string[] { Constants.SamplePhotoPrinter, Constants.SamplePresentation, Constants.SampleXML, Constants.SampleSecondDoc, Constants.SamplePerfectMatch });
+        
+        public bool publishOnGroupShare = false;
         
         void ITestModule.Run()
         {
-            Mouse.DefaultMoveTime = 0;
-            Keyboard.DefaultKeyPressTime = 0;
-            Mouse.DefaultClickTime = 0;
-            Delay.SpeedFactor = 0.0;
+        	utilityMethods.setTestRunSettings();
             
+        	
+        	//Give a name to the project
             string projectName = utilityMethods.projectNameRandom();
-            string projectFilesFolder = @"C:\Users\astan\Documents\Studio 2018\Projects\" + projectName + @"\de-DE\TranslatableFiles\";
-            string filesLocation = @"C:\Users\astan\Desktop\TranslatableFiles";
-            string tmtbLocation = @"C:\Users\astan\Desktop\Utilities\";
-            string fileName = "SamplePhotoPrinter.doc";
-            string tmName = "English-German";
-            string termbaseName = "Printer";
-            string sourceLanguage = "English (United States)";
-            string targetLanguage = "German (Germany)";
-            string expectedTermSecondSegment = "photo printer";
-            string firstSegmentExpectedTranslation = "Erste Schritte";
-            string secondSegmentExpectedTranslation = "Geeigneten Aufstellungsort für Ihren Fotodrucker finden";
-            string thirdSegmentExpectedTranslation = "Platzieren Sie den Fotodrucker auf einer flachen, sauberen und staubfreien Oberfläche, und stellen Sie ihn an einem trockenen Ort auf, der keinem direkten Sonnenlicht ausgesetzt ist.";
-            string ranorexTranslation = "Ranorex translation";
-            string customTerm = "RanorexTerm";
-            string editedTerm = "RanorexEdited";
-            
-            
+            string projectFilesFolder = Constants.StudioProjectsFolder + projectName + @"\de-DE\" + Constants.TranslatableFiles + @"\";
+
             
             //Start Studio
-            utilityMethods.startStudio();
+            utilityMethods.startStudio(Constants.NotFirstStart);
            
            	//Activate if necessary
-			if (repo.LicenseManagerForm.ButtonActivateButtonInfo.Exists(5000)) {
+           	if (repo.LicenseManagerForm.ButtonActivateButtonInfo.Exists(5000)) {
 				
-				utilityMethods.studioActivation("clujhv28");
+				utilityMethods.studioActivation(Constants.LicenseServer);
 			}
             
 			//First setup
@@ -88,32 +74,32 @@ namespace Studio2017
 			utilityMethods.turnOffAutomaticUpdates();
 			
 			//Start Studio
-			utilityMethods.startStudio();
+			utilityMethods.startStudio(Constants.NotFirstStart);
 			
 			//Create project
 			projectCreationUtility.goToNewProjectWizard();
-			projectCreationUtility.createProject(projectName, filesLocation, tmtbLocation, tmName, termbaseName, sourceLanguage, targetLanguage);
+			projectCreationUtility.createProject(projectName, publishOnGroupShare, "", "", Constants.InputFilesLocation, Constants.InputTmtbLocation, Constants.EnglishGermanTM, Constants.PrinterTB, Constants.EnglishUS, Constants.GermanDE);
 			
 			//Select translation file
 			views.selectProject(projectName);
 			views.goToFilesView();
 			views.includeSubfolders("check");
-			views.openFileForTranslation(fileName);	
+			views.openFileForTranslation(Constants.SamplePhotoPrinter);	
 			
 			
 			//Get translation of first segment
 			string firstTranslation = editor.getSegmentTranslation(1);
-			Validate.AreEqual(firstSegmentExpectedTranslation, firstTranslation);
+			Validate.AreEqual(Constants.FirstSegmentExpectedTranslation, firstTranslation);
 			
 			//Apply translation from translation memory
 			string secondTranslation = editor.getSegmentTranslation(2);
-			Validate.AreEqual(secondSegmentExpectedTranslation, secondTranslation);
+			Validate.AreEqual(Constants.SecondSegmentExpectedTranslation, secondTranslation);
 			
 			//Get terms from Term Recognition
 			editor.goToTermRecognition();
 			var existingTerms = new List<string>();
 			existingTerms = editor.getTerms();
-			if (existingTerms.Contains(expectedTermSecondSegment)) {
+			if (existingTerms.Contains(Constants.ExpectedTermSecondSegment)) {
 				Report.Success("Success", "Terms is found for the second segment");
 			}
 			else {
@@ -122,11 +108,11 @@ namespace Studio2017
 			
 			//Translate a segment and confirm
 			editor.goToHomeView();
-			editor.translateSegment(5, ranorexTranslation);
+			editor.translateSegment(5, Constants.RanorexTranslation);
 			editor.cofirmTranslation();
 			
 			string thirdTranslation = editor.getSegmentTranslation(5);
-			Validate.AreEqual(ranorexTranslation, thirdTranslation);
+			Validate.AreEqual(Constants.RanorexTranslation, thirdTranslation);
 			
 			
 			//Verify TM works delete and then come back to segment to see if the interaction with the TM works
@@ -135,17 +121,17 @@ namespace Studio2017
 			
 			//Move to third segment to change segments and validate
 			string fourthTranslation = editor.getSegmentTranslation(3);
-			Validate.AreEqual(thirdSegmentExpectedTranslation, fourthTranslation);
+			Validate.AreEqual(Constants.ThirdSegmentExpectedTranslation, fourthTranslation);
 			
 			//Go back to the deleted segment
 			string deletedSegment = editor.getSegmentTranslation(5);
 			if (deletedSegment == "\r\n" || deletedSegment == "") {
 				editor.applyTranslation();
 				deletedSegment = editor.getSegmentTranslation(5);
-				Validate.AreEqual(ranorexTranslation, deletedSegment);
+				Validate.AreEqual(Constants.RanorexTranslation, deletedSegment);
 			}
 			else {
-			Validate.AreEqual(ranorexTranslation, deletedSegment);
+			Validate.AreEqual(Constants.RanorexTranslation, deletedSegment);
 			}
 			
 			
@@ -159,11 +145,11 @@ namespace Studio2017
 			    Report.Failure("Fail", "Term was not added into target segment");
 			}
 			
-			string englishTerm = editor.addTermInTermbase(customTerm);
+			string englishTerm = editor.addTermInTermbase(Constants.CustomTerm);
             //Get terms from Term Recognition
 			var addedTerms = new List<string>();
 			addedTerms = editor.getTerms();
-			if (addedTerms.Contains(customTerm) && addedTerms.Contains(englishTerm)) {
+			if (addedTerms.Contains(Constants.CustomTerm) && addedTerms.Contains(englishTerm)) {
 				Report.Success("Success", "Terms is found for the second segment");
 			}
 			else {
@@ -171,19 +157,19 @@ namespace Studio2017
 			}
 			
 			//Search and edit term
-			if (editor.checkIfTermExists(englishTerm, customTerm)) {
+			if (editor.checkIfTermExists(englishTerm, Constants.CustomTerm)) {
 				Report.Success("Term " + englishTerm + " was found in termbase search");
 			}
 			else {
 				Report.Failure("Term" + englishTerm + " was not found in termbase search");
 			}
 			
-			editor.viewTermDetails(customTerm);
-			editor.editTerm(editedTerm);
+			editor.viewTermDetails(Constants.CustomTerm);
+			editor.editTerm(Constants.EditedTerm);
 			editor.goToTermRecognition();
 			var termsEdited = new List<string>();
 			termsEdited = editor.getTerms();
-			if (termsEdited.Contains(englishTerm) && termsEdited.Contains(editedTerm)) {
+			if (termsEdited.Contains(englishTerm) && termsEdited.Contains(Constants.EditedTerm)) {
 				Report.Success("Success", "Edited term is found");
 			}
 			else {
@@ -193,11 +179,11 @@ namespace Studio2017
 			
 			//Delete term
 			editor.goToTermBaseSearch();
-			editor.viewTermDetails(customTerm);
+			editor.viewTermDetails(Constants.CustomTerm);
 			editor.deleteTermEntry();
 			
 			//Verify that term is deleted
-			if (editor.checkIfTermExists(englishTerm, customTerm)) {
+			if (editor.checkIfTermExists(englishTerm, Constants.CustomTerm)) {
 				Report.Failure("Fail", "Term was not deleted");
 			}
 			else {
@@ -206,17 +192,17 @@ namespace Studio2017
 			
 			
 			//Save Target As
-			projectCreationUtility.saveTargetAs(projectFilesFolder+fileName);
+			projectCreationUtility.saveTargetAs(projectFilesFolder+Constants.SamplePhotoPrinter);
 			System.DateTime start = System.DateTime.Now;
-			while (!System.IO.File.Exists(projectFilesFolder+fileName) && System.DateTime.Now.Subtract(start).Seconds < 20) {
-				Console.WriteLine("Target file " + fileName + " is not present yet");
+			while (!System.IO.File.Exists(projectFilesFolder+Constants.SamplePhotoPrinter) && System.DateTime.Now.Subtract(start).Seconds < 20) {
+				Console.WriteLine("Target file " + Constants.SamplePhotoPrinter + " is not present yet");
 			}
-			bool fileIsPresent = System.IO.File.Exists(projectFilesFolder+fileName);
+			bool fileIsPresent = System.IO.File.Exists(projectFilesFolder+Constants.SamplePhotoPrinter);
 			if (fileIsPresent) {
-				Report.Success("Success", "File " + fileName + " is saved as target");
+				Report.Success("Success", "File " + Constants.SamplePhotoPrinter + " is saved as target");
 			}
 			else {
-				Report.Failure("Fail", "File " + fileName + " is not saved as target");
+				Report.Failure("Fail", "File " + Constants.SamplePhotoPrinter + " is not saved as target");
 			}			
 			
 			
@@ -245,6 +231,8 @@ namespace Studio2017
 			//Close Studio
 			utilityMethods.closeStudio();
 			editor.questionSaveChanges("No");
+			
+			//CompareSdlFilesLib.CompareSdlFiles.FileCompareXliff("armand", "Studio");
         }
         
     }

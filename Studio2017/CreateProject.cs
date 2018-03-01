@@ -38,35 +38,27 @@ namespace Studio2017
         UtilityMethods utilityMethods = new UtilityMethods();
         ProjectCreationUtility projectCreationUtility = new ProjectCreationUtility();
         
+        public bool publishOnGroupShare = false;
+        
 
         void ITestModule.Run()
         {
-            Mouse.DefaultMoveTime = 0;
-            Keyboard.DefaultKeyPressTime = 0;
-            Mouse.DefaultClickTime = 0;
-            Delay.SpeedFactor = 0.0;
+        	utilityMethods.setTestRunSettings();
             
-            string filesLocation = @"C:\Users\astan\Desktop\TranslatableFiles";
-            string tmtbLocation = @"C:\Users\astan\Desktop\Utilities\";
-            string tmName = "English-German";
-            string termbaseName = "Printer";
+        	//Give a name to the project
             string projectName = utilityMethods.projectNameRandom();
-            string sourceLanguage = "English (United States)";
-            string targetLanguage = "German (Germany)";
 
             //Start Studio
-            utilityMethods.startStudio();
+            utilityMethods.startStudio(Constants.NotFirstStart);
             
             
             //Activate if necessary
 			if (repo.LicenseManagerForm.ButtonActivateButtonInfo.Exists(5000)) {
-				
-				utilityMethods.studioActivation("clujhv28");
+				utilityMethods.studioActivation(Constants.LicenseServer);
 			}
             
 			//First setup
 			if (repo.WizardWinForm.SDLTradosStudioSetupInfo.Exists(5000)){
-				
 				utilityMethods.firstSetup("@");
 			}
 			
@@ -75,11 +67,11 @@ namespace Studio2017
 			utilityMethods.turnOffAutomaticUpdates();
 			
 			//Start Studio
-			utilityMethods.startStudio();
+			utilityMethods.startStudio(Constants.NotFirstStart);
 			
 			//Create project
 			projectCreationUtility.goToNewProjectWizard();
-			projectCreationUtility.createProject(projectName, filesLocation, tmtbLocation, tmName, termbaseName, sourceLanguage, targetLanguage);
+			projectCreationUtility.createProject(projectName, publishOnGroupShare, "", "", Constants.InputFilesLocation, Constants.InputTmtbLocation, Constants.EnglishGermanTM, Constants.PrinterTB, Constants.EnglishUS, Constants.GermanDE);
 			utilityMethods.closeStudio();
         }
     }

@@ -116,6 +116,9 @@
     <Compile Include="BatchTaskUtility.cs">
       <id>16163525-79ba-40e1-92a2-7c7399389378</id>
     </Compile>
+    <Compile Include="Constants.cs">
+      <id>7928dbbc-d52c-4ec6-a8a2-a725aafedf7a</id>
+    </Compile>
     <Compile Include="PrepareStudio.cs">
       <id>1302bc17-ea09-46cd-b949-d203e6e12baf</id>
     </Compile>
@@ -127,6 +130,9 @@
     </Compile>
     <Compile Include="ProjectCreationUtility.cs">
       <id>9d8194ef-894f-4dea-94b3-51d3c7dc6fdd</id>
+    </Compile>
+    <Compile Include="PublishProject.cs">
+      <id>d162d63d-e933-4257-8fbb-98fed818ff24</id>
     </Compile>
     <Compile Include="TranslateFile.cs">
       <id>9f59050f-1f70-4903-9b41-96fce108f7eb</id>

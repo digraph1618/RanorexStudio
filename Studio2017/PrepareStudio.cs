@@ -39,37 +39,29 @@ namespace Studio2017
 		private static Studio2017Repository repo = Studio2017Repository.Instance;
 		UtilityMethods utilityMethods = new UtilityMethods();
         
-		string localBuildFolder = @"C:\Automation\Builds\";
-		string buildsServer = @"\\sheffdevproj1.global.sdl.corp\BuildDrop\";
-		string studioFolderPattern = "TranslationStudio.Master_15*";
-		string studioPattern = "SDLTradosStudio*";
-        
         void ITestModule.Run()
         {
-            Mouse.DefaultMoveTime = 0;
-            Keyboard.DefaultKeyPressTime = 0;
-            Mouse.DefaultClickTime = 0;
-            Delay.SpeedFactor = 0.0;
+        	utilityMethods.setTestRunSettings();
             
             //Copy Studio build
-            if (!Directory.Exists(localBuildFolder)) {
-            	Directory.CreateDirectory(localBuildFolder);
+            if (!Directory.Exists(Constants.LocalBuildFolder)) {
+            	Directory.CreateDirectory(Constants.LocalBuildFolder);
             }
             
-            var directory = new DirectoryInfo(buildsServer).GetDirectories(studioFolderPattern).OrderBy(folder => folder.LastWriteTime).ToList();
+            var directory = new DirectoryInfo(Constants.BuildsServer).GetDirectories(Constants.StudioFolderPattern).OrderBy(folder => folder.LastWriteTime).ToList();
             int lastBuild = directory.Count;
             string buildFolder = directory[lastBuild-1].FullName;
             
-            var studioExecutable = new DirectoryInfo(@buildFolder).GetFiles(studioPattern);
+            var studioExecutable = new DirectoryInfo(@buildFolder).GetFiles(Constants.StudioExePattern);
             
             var sourceFolder = @buildFolder + @"\" + studioExecutable[0];
-            var localDestinationFolder = @localBuildFolder+studioExecutable[0];
+            var localDestinationFolder = @Constants.LocalBuildFolder + studioExecutable[0];
             
 
             File.Copy(sourceFolder, localDestinationFolder, true);
             
             
-            var localStudioExecutable = new DirectoryInfo(localBuildFolder).GetFiles(studioPattern).OrderBy(file => file.LastWriteTime).ToList();
+            var localStudioExecutable = new DirectoryInfo(Constants.LocalBuildFolder).GetFiles(Constants.StudioExePattern).OrderBy(file => file.LastWriteTime).ToList();
             int fileNr = localStudioExecutable.Count;
             
             //Install Studio

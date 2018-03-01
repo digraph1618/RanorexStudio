@@ -37,27 +37,19 @@ namespace Studio2017
 		
 		void ITestModule.Run()
 		{
-            Mouse.DefaultMoveTime = 0;
-            Keyboard.DefaultKeyPressTime = 0;
-            Mouse.DefaultClickTime = 0;
-            Delay.SpeedFactor = 0.0;
-			
-			
-			string keyName = @"Software\SDL\Studio15";
-			string registryEntry = "MachineSupport";
-			string licenseServer = "clujhv28";
+			utilityMethods.setTestRunSettings();
 			
 			
 			//Delete registry for First step
-			utilityMethods.deleteRegistry(keyName, registryEntry);
+			utilityMethods.deleteRegistry(Constants.RegistryPath, Constants.RegistryEntry);
 
 			
 			//Start Studio
-			utilityMethods.startStudio();
+			utilityMethods.startStudio(Constants.FirstStart);
 			
 			
 			if (repo.LicenseManagerForm.ButtonActivateButtonInfo.Exists(5000)) {
-				utilityMethods.studioActivation(licenseServer);
+				utilityMethods.studioActivation(Constants.LicenseServer);
 			}
 			
 			//First setup
@@ -69,7 +61,7 @@ namespace Studio2017
 			
 			
 			//Start Studio
-			utilityMethods.startStudio();
+			utilityMethods.startStudio(Constants.NotFirstStart);
 			
 			
 			//Go to Product Activation
@@ -79,12 +71,12 @@ namespace Studio2017
 			if (repo.LicenseManagerForm.ButtonDeactivateButtonInfo.Exists(5000)) {
 			
 				utilityMethods.deactivateButton();
-				utilityMethods.studioActivation(licenseServer);
+				utilityMethods.studioActivation(Constants.LicenseServer);
 			}
 			
 			else {
 				
-				utilityMethods.studioActivation(licenseServer);
+				utilityMethods.studioActivation(Constants.LicenseServer);
 			}
 			
 			utilityMethods.closeStudio();
