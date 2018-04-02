@@ -1,20 +1,11 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="Studio2017.rxtst" />
+    <Element value="Licensing.cs" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
     <Element value="Studio2017.rxtst" />
-    <Element value="TranslateFile.cs" />
-    <Element value="CreateProject.cs" />
-    <Element value="ProjectCreationUtility.cs" />
-    <Element value="PublishProject.cs" />
-    <Element value="UtilityMethods.cs" />
-    <Element value="Studio2017Repository.rxrep" />
-    <Element value="EditorUtility.cs" />
-    <Element value="Recording1.rxrec" />
-    <Element value="Constants.cs" />
-    <Element value="PrepareStudio.cs" />
+    <Element value="Licensing.cs" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">

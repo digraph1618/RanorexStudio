@@ -57,7 +57,6 @@ namespace Studio2017
         
         
         public void studioActivation(string activationServer) {
-        
         	repo.LicenseManagerForm.ButtonActivateButton.Click();
 			repo.LicenseManagerForm.AlternativeActivationOptions.Click();
 			repo.LicenseManagerForm.ButtonLicenseServerButton.Click();
@@ -67,10 +66,9 @@ namespace Studio2017
         }
         
         public void firstSetup(string email) {
-        	var studioFirstSetup = repo.WizardWinForm.SDLTradosStudioSetup;
-			repo.WizardWinForm.ButtonNextButton.Click();
-			repo.WizardWinForm.EmailAddress.TextValue = email;
-			repo.WizardWinForm.ButtonFinishButton.Click();
+			repo.ProjectWizard.NextButton.Click();
+			repo.StudioInstallation.EmailAddress.TextValue = email;
+			repo.ProjectWizard.FinishProject.Click();
         }
         
         

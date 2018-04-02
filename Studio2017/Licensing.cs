@@ -60,26 +60,23 @@ namespace Studio2017
 			utilityMethods.turnOffAutomaticUpdates();
 			
 			
-			//Start Studio
-			utilityMethods.startStudio(Constants.NotFirstStart);
+//			//Start Studio
+//			utilityMethods.startStudio(Constants.NotFirstStart);
+//			
+//			
+//			//Go to Product Activation
+//			utilityMethods.goToProductActivation();
+//			
+//			
+//			if (repo.LicenseManagerForm.ButtonDeactivateButtonInfo.Exists(5000)) {
+//				utilityMethods.deactivateButton();
+//				utilityMethods.studioActivation(Constants.LicenseServer);
+//			}
+//			else {
+//				utilityMethods.studioActivation(Constants.LicenseServer);
+//			}
 			
-			
-			//Go to Product Activation
-			utilityMethods.goToProductActivation();
-			
-			
-			if (repo.LicenseManagerForm.ButtonDeactivateButtonInfo.Exists(5000)) {
-			
-				utilityMethods.deactivateButton();
-				utilityMethods.studioActivation(Constants.LicenseServer);
-			}
-			
-			else {
-				
-				utilityMethods.studioActivation(Constants.LicenseServer);
-			}
-			
-			utilityMethods.closeStudio();
+//			utilityMethods.closeStudio();
 		}
 	}
 }

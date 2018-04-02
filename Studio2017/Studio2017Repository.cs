@@ -3288,6 +3288,7 @@ namespace Studio2017
             RepoItemInfo _setupcompletedInfo;
             RepoItemInfo _buttonokInfo;
             RepoItemInfo _maximizeInfo;
+            RepoItemInfo _emailaddressInfo;
 
             /// <summary>
             /// Creates a new StudioInstallation  folder.
@@ -3304,6 +3305,7 @@ namespace Studio2017
                 _setupcompletedInfo = new RepoItemInfo(this, "SetupCompleted", ".//text[@text='Setup has completed successfully.']", 30000, null, "0879ebed-91fe-4d27-aeff-eb1c4d7c0c93");
                 _buttonokInfo = new RepoItemInfo(this, "ButtonOK", ".//button[@text='OK']", 30000, null, "3fdcf139-97dc-459e-8be5-997f54f328be");
                 _maximizeInfo = new RepoItemInfo(this, "Maximize", ".//button[@automationid='Maximize']", 30000, null, "33f4e307-9c30-4608-a09d-2565be46d095");
+                _emailaddressInfo = new RepoItemInfo(this, "EmailAddress", ".//container[@controlname='CurrentUserWizardPageControl']//text[@controlname='_textBoxEmail']//text[@accessiblename='Email Address']", 30000, null, "ba59f8f1-9cd1-4dac-90cd-44f6d106d91e");
             }
 
             /// <summary>
@@ -3519,6 +3521,30 @@ namespace Studio2017
                 get
                 {
                     return _maximizeInfo;
+                }
+            }
+
+            /// <summary>
+            /// The EmailAddress item.
+            /// </summary>
+            [RepositoryItem("ba59f8f1-9cd1-4dac-90cd-44f6d106d91e")]
+            public virtual Ranorex.Text EmailAddress
+            {
+                get
+                {
+                    return _emailaddressInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The EmailAddress item info.
+            /// </summary>
+            [RepositoryItemInfo("ba59f8f1-9cd1-4dac-90cd-44f6d106d91e")]
+            public virtual RepoItemInfo EmailAddressInfo
+            {
+                get
+                {
+                    return _emailaddressInfo;
                 }
             }
 

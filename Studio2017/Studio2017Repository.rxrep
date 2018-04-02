@@ -1420,6 +1420,15 @@ RK5CYII=
 			searchtimeout="30000ms">
 				/form[@title~'SDL Trados Studio']//button[@automationid='Maximize']
 			</item>
+			<item
+			addcaps="text,accessible"
+			capname="text"
+			id="ba59f8f1-9cd1-4dac-90cd-44f6d106d91e"
+			name="EmailAddress"
+			refimgid="88472041-6936-41e4-98c5-2a8fc26ca06f"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//container[@controlname='CurrentUserWizardPageControl']//text[@controlname='_textBoxEmail']//text[@accessiblename='Email Address']
+			</item>
 			<basepath>
 				/form[@title~'SDL Trados Studio']
 			</basepath>
