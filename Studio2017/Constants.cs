@@ -26,6 +26,8 @@ namespace Studio2017
     [TestModule("ED8106A6-ACDF-4156-8E36-7BA2A090B0B5", ModuleType.UserCode, 1)]
     public class Constants
     {
+    		public static string MachineUser = Environment.UserName;
+    		public static string FirstStepWizardPath = @"C:\Users\" + Constants.MachineUser + @"\AppData\Roaming\SDL\SDL Trados Studio\15.0.0.0\";
     	    public const string StudioAppPath = @"C:\Program Files (x86)\SDL\SDL Trados Studio\Studio15\SDLTradosStudio.exe";
     		public const string TranslatableFiles = "TranslatableFiles";
     		public const string StudioProjectsFolder = @"C:\Users\astan\Documents\Studio 2018\Projects\";

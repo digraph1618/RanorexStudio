@@ -1,10 +1,11 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="Studio2017.rxtst" />
+    <Element value="Licensing.cs" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
     <Element value="Studio2017.rxtst" />
+    <Element value="Licensing.cs" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">

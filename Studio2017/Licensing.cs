@@ -34,11 +34,17 @@ namespace Studio2017
 
 		private static Studio2017Repository repo = Studio2017Repository.Instance;
 		UtilityMethods utilityMethods = new UtilityMethods();
+		List<string> filesToDelete = new List<string>(new string[] { "BaseSettings.xml", "Settings.xml", "UserSettings.xml" });
+		
 		
 		void ITestModule.Run()
 		{
+			
 			utilityMethods.setTestRunSettings();
 			
+			
+			//Reset first step wizard
+			utilityMethods.deleteFiles(filesToDelete, Constants.FirstStepWizardPath);
 			
 			//Delete registry for First step
 			utilityMethods.deleteRegistry(Constants.RegistryPath, Constants.RegistryEntry);

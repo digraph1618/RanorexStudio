@@ -3289,6 +3289,7 @@ namespace Studio2017
             RepoItemInfo _buttonokInfo;
             RepoItemInfo _maximizeInfo;
             RepoItemInfo _emailaddressInfo;
+            RepoItemInfo _nocustomerexperienceInfo;
 
             /// <summary>
             /// Creates a new StudioInstallation  folder.
@@ -3306,6 +3307,7 @@ namespace Studio2017
                 _buttonokInfo = new RepoItemInfo(this, "ButtonOK", ".//button[@text='OK']", 30000, null, "3fdcf139-97dc-459e-8be5-997f54f328be");
                 _maximizeInfo = new RepoItemInfo(this, "Maximize", ".//button[@automationid='Maximize']", 30000, null, "33f4e307-9c30-4608-a09d-2565be46d095");
                 _emailaddressInfo = new RepoItemInfo(this, "EmailAddress", ".//container[@controlname='CurrentUserWizardPageControl']//text[@controlname='_textBoxEmail']//text[@accessiblename='Email Address']", 30000, null, "ba59f8f1-9cd1-4dac-90cd-44f6d106d91e");
+                _nocustomerexperienceInfo = new RepoItemInfo(this, "NoCustomerExperience", ".//container[@controlname='CustomerExperienceFeedbackControl']//radiobutton[@controlname='radioButtonNo']", 30000, null, "2c27c600-64d9-486d-9454-894a648f3b7c");
             }
 
             /// <summary>
@@ -3545,6 +3547,30 @@ namespace Studio2017
                 get
                 {
                     return _emailaddressInfo;
+                }
+            }
+
+            /// <summary>
+            /// The NoCustomerExperience item.
+            /// </summary>
+            [RepositoryItem("2c27c600-64d9-486d-9454-894a648f3b7c")]
+            public virtual Ranorex.RadioButton NoCustomerExperience
+            {
+                get
+                {
+                    return _nocustomerexperienceInfo.CreateAdapter<Ranorex.RadioButton>(true);
+                }
+            }
+
+            /// <summary>
+            /// The NoCustomerExperience item info.
+            /// </summary>
+            [RepositoryItemInfo("2c27c600-64d9-486d-9454-894a648f3b7c")]
+            public virtual RepoItemInfo NoCustomerExperienceInfo
+            {
+                get
+                {
+                    return _nocustomerexperienceInfo;
                 }
             }
 

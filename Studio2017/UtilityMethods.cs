@@ -68,6 +68,10 @@ namespace Studio2017
         public void firstSetup(string email) {
 			repo.ProjectWizard.NextButton.Click();
 			repo.StudioInstallation.EmailAddress.TextValue = email;
+			repo.ProjectWizard.NextButton.Click();
+			repo.ProjectWizard.NextButton.Click();
+			repo.StudioInstallation.NoCustomerExperience.Click();
+			repo.ProjectWizard.NextButton.Click();
 			repo.ProjectWizard.FinishProject.Click();
         }
         
@@ -128,6 +132,16 @@ namespace Studio2017
 				key.DeleteSubKey(entry);
 			  }
 			}
+        }
+        
+        public void deleteFiles(List<string> filesToDelete, string path) {
+        	foreach (string file in filesToDelete) {
+        		if (File.Exists(path+file)) {
+        			File.Delete(path+file);
+        		}
+        }
+        
+        
         }
         
         public string projectNameRandom() {

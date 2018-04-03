@@ -1429,6 +1429,15 @@ RK5CYII=
 			searchtimeout="30000ms">
 				/form[@title~'SDL Trados Studio']//container[@controlname='CurrentUserWizardPageControl']//text[@controlname='_textBoxEmail']//text[@accessiblename='Email Address']
 			</item>
+			<item
+			addcaps="radiobutton,control,nativewindow"
+			capname="radiobutton"
+			id="2c27c600-64d9-486d-9454-894a648f3b7c"
+			name="NoCustomerExperience"
+			refimgid="66b7020b-4564-4d44-855c-036b19cbbae1"
+			searchtimeout="30000ms">
+				/form[@title~'SDL Trados Studio']//container[@controlname='CustomerExperienceFeedbackControl']//radiobutton[@controlname='radioButtonNo']
+			</item>
 			<basepath>
 				/form[@title~'SDL Trados Studio']
 			</basepath>
