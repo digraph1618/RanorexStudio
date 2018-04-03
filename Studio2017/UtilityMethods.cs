@@ -77,6 +77,7 @@ namespace Studio2017
         
         
         public void turnOffAutomaticUpdates() {
+        	repo.StudioWindowForm.ApplicationMenuButtonInfo.WaitForExists(20000);
         	repo.StudioWindowForm.ApplicationMenuButton.Click();
 			repo.StudioWindowForm.IGOptions.Click();
 			repo.SettingsDialogForm.AutomaticUpdates.Click();
