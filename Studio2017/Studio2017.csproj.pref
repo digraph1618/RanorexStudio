@@ -1,6 +1,6 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="Licensing.cs" />
+    <Element value="UtilityMethods.cs" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
