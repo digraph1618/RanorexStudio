@@ -1,3 +1,6 @@
 * text=auto
 
 /.gitattributes export-ignore
+
+
+*.rxrep merge=rxrepomerge
