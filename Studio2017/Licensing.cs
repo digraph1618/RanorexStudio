@@ -47,10 +47,8 @@ namespace Studio2017
 			//Start Studio
 			utilityMethods.startStudio(Constants.FirstStart);
 			
-			
-			if (repo.LicenseManagerForm.ButtonActivateButtonInfo.Exists(20000)) {
-				utilityMethods.studioActivation(Constants.LicenseServer);
-			}
+			//Activate Studio
+			utilityMethods.studioActivation(Constants.LicenseServer);
 			
 			//First setup
 			utilityMethods.firstSetup("@");

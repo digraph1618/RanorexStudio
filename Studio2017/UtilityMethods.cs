@@ -76,7 +76,7 @@ namespace Studio2017
         	repo.StudioWindowForm.ApplicationMenuButton.Click();
 			repo.StudioWindowForm.IGOptions.Click();
 			repo.SettingsDialogForm.AutomaticUpdates.Click();
-			repo.SettingsDialogForm.RadioButtonManuallyCheckForUpdatesOptio.Click();
+			repo.SettingsDialogForm.RadioButtonManuallyCheckForUpdatesOption.Click();
 			repo.SettingsDialogForm.OkButton.Click();
 			repo.StudioWindowForm.Close.Click();
         }
@@ -85,6 +85,7 @@ namespace Studio2017
         	
         	if (firstTime) {
 				Host.Local.RunApplication(Constants.StudioAppPath);
+				repo.LicenseManagerForm.ButtonActivateButtonInfo.WaitForExists(30000);
         	}
         	else {
 			ProcessStartInfo startInfo = new ProcessStartInfo(Constants.StudioAppPath);

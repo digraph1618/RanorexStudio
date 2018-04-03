@@ -1654,7 +1654,7 @@ namespace Studio2017
         public partial class SettingsDialogFormAppFolder : RepoGenBaseFolder
         {
             RepoItemInfo _automaticupdatesInfo;
-            RepoItemInfo _radiobuttonmanuallycheckforupdatesoptioInfo;
+            RepoItemInfo _radiobuttonmanuallycheckforupdatesoptionInfo;
             RepoItemInfo _okbuttonInfo;
 
             /// <summary>
@@ -1664,7 +1664,7 @@ namespace Studio2017
                     base("SettingsDialogForm", "/form[@controlname='SettingsDialogForm']", parentFolder, 30000, null, true, "4548fc46-4aa0-4db4-9c19-230aa4d10bb0", "")
             {
                 _automaticupdatesInfo = new RepoItemInfo(this, "AutomaticUpdates", ".//container[@controlname='_settingsUIControl']//element[@name='Automatic Updates']", 30000, null, "6035d670-73b5-4541-98d9-50eb24484318");
-                _radiobuttonmanuallycheckforupdatesoptioInfo = new RepoItemInfo(this, "RadioButtonManuallyCheckForUpdatesOptio", ".//radiobutton[@controlname='_manuallyCheckForUpdatesOption']", 30000, null, "f46a2e67-2a36-4dfa-adc2-bd4dfa9046ea");
+                _radiobuttonmanuallycheckforupdatesoptionInfo = new RepoItemInfo(this, "RadioButtonManuallyCheckForUpdatesOption", ".//radiobutton[@controlname='_manuallyCheckForUpdatesOption']", 30000, null, "f46a2e67-2a36-4dfa-adc2-bd4dfa9046ea");
                 _okbuttonInfo = new RepoItemInfo(this, "OkButton", ".//container[@controlname='_tableLayoutPanel']//button[@controlname='okButton']", 30000, null, "21e50ab0-9f9d-46e1-a2fe-2be76e8107d0");
             }
 
@@ -1717,26 +1717,26 @@ namespace Studio2017
             }
 
             /// <summary>
-            /// The RadioButtonManuallyCheckForUpdatesOptio item.
+            /// The RadioButtonManuallyCheckForUpdatesOption item.
             /// </summary>
             [RepositoryItem("f46a2e67-2a36-4dfa-adc2-bd4dfa9046ea")]
-            public virtual Ranorex.RadioButton RadioButtonManuallyCheckForUpdatesOptio
+            public virtual Ranorex.RadioButton RadioButtonManuallyCheckForUpdatesOption
             {
                 get
                 {
-                    return _radiobuttonmanuallycheckforupdatesoptioInfo.CreateAdapter<Ranorex.RadioButton>(true);
+                    return _radiobuttonmanuallycheckforupdatesoptionInfo.CreateAdapter<Ranorex.RadioButton>(true);
                 }
             }
 
             /// <summary>
-            /// The RadioButtonManuallyCheckForUpdatesOptio item info.
+            /// The RadioButtonManuallyCheckForUpdatesOption item info.
             /// </summary>
             [RepositoryItemInfo("f46a2e67-2a36-4dfa-adc2-bd4dfa9046ea")]
-            public virtual RepoItemInfo RadioButtonManuallyCheckForUpdatesOptioInfo
+            public virtual RepoItemInfo RadioButtonManuallyCheckForUpdatesOptionInfo
             {
                 get
                 {
-                    return _radiobuttonmanuallycheckforupdatesoptioInfo;
+                    return _radiobuttonmanuallycheckforupdatesoptionInfo;
                 }
             }
 

@@ -520,7 +520,7 @@ TkSuQmCC
 			addcaps="radiobutton,control,nativewindow"
 			capname="radiobutton"
 			id="f46a2e67-2a36-4dfa-adc2-bd4dfa9046ea"
-			name="RadioButtonManuallyCheckForUpdatesOptio"
+			name="RadioButtonManuallyCheckForUpdatesOption"
 			refimgid="4be928df-b00f-47ef-a106-589e6a65964d"
 			searchtimeout="30000ms">
 				/form[@controlname='SettingsDialogForm']//radiobutton[@controlname='_manuallyCheckForUpdatesOption']
