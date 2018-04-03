@@ -64,8 +64,8 @@ namespace Studio2017
 			utilityMethods.turnOffAutomaticUpdates();
 			
 			
-//			//Start Studio
-//			utilityMethods.startStudio(Constants.NotFirstStart);
+			//Start Studio
+			utilityMethods.startStudio(Constants.NotFirstStart);
 //			
 //			
 //			//Go to Product Activation
@@ -80,7 +80,7 @@ namespace Studio2017
 //				utilityMethods.studioActivation(Constants.LicenseServer);
 //			}
 			
-//			utilityMethods.closeStudio();
+			utilityMethods.closeStudio();
 		}
 	}
 }

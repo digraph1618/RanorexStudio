@@ -4,8 +4,9 @@
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
-    <Element value="Studio2017.rxtst" />
     <Element value="Licensing.cs" />
+    <Element value="Studio2017.rxtst" />
+    <Element value="Constants.cs" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">
