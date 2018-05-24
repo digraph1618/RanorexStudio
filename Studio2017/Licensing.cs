@@ -40,28 +40,30 @@ namespace Studio2017
 		void ITestModule.Run()
 		{
 			
-			utilityMethods.setTestRunSettings();
+//			utilityMethods.setTestRunSettings();
+//			
+//			utilityMethods.openBrowser("http:\\cljvmgs2017", "chrome", "");
+		
 			
-			
-			//Reset first step wizard
-			utilityMethods.deleteFiles(filesToDelete, Constants.FirstStepWizardPath);
-			
-			//Delete registry for First step
-			utilityMethods.deleteRegistry(Constants.RegistryPath, Constants.RegistryEntry);
-
-			
-			//Start Studio
-			utilityMethods.startStudio(Constants.FirstStart);
-			
-			//Activate Studio
-			utilityMethods.studioActivation(Constants.LicenseServer);
-			
-			//First setup
-			utilityMethods.firstSetup("@");
-			
-			
-			//Turn off Automatic Updates
-			utilityMethods.turnOffAutomaticUpdates();
+//			//Reset first step wizard
+//			utilityMethods.deleteFiles(filesToDelete, Constants.FirstStepWizardPath);
+//			
+//			//Delete registry for First step
+//			utilityMethods.deleteRegistry(Constants.RegistryPath, Constants.RegistryEntry);
+//
+//			
+//			//Start Studio
+//			utilityMethods.startStudio(Constants.FirstStart);
+//			
+//			//Activate Studio
+//			utilityMethods.studioActivation(Constants.LicenseServer);
+//			
+//			//First setup
+//			utilityMethods.firstSetup("@");
+//			
+//			
+//			//Turn off Automatic Updates
+//			utilityMethods.turnOffAutomaticUpdates();
 			
 			
 			//Start Studio
@@ -81,6 +83,6 @@ namespace Studio2017
 //			}
 			
 //			utilityMethods.closeStudio();
-		}
+		}	
 	}
 }

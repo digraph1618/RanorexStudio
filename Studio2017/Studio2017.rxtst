@@ -28,6 +28,16 @@ rxversion="8.0">
 			name="SanityChecks">
 			</testcase>
 			<testmodule
+			id="524a5414-3392-4231-a58b-3423c69f6e9e"
+			name="CloseAppsAndBrowsers"
+			ref="192d3fd4-bbf0-46c3-b152-c273fea11f0a"
+			type="UserCode">
+			</testmodule>
+			<teardown
+			id="5ad4498f-f38c-431a-a2ca-258dda4794b6"
+			name="teardown">
+			</teardown>
+			<testmodule
 			enabled="False"
 			id="609d6be7-e261-4b3e-bfb4-8f5630df5362"
 			name="PrepareStudio"
@@ -42,6 +52,7 @@ rxversion="8.0">
 			type="UserCode">
 			</testmodule>
 			<testmodule
+			enabled="False"
 			id="8a17ff9d-01ca-432a-9db3-d79cae997433"
 			name="Licensing"
 			ref="887a96f6-73ed-4777-86f6-486ebe7ed380"
@@ -61,6 +72,12 @@ rxversion="8.0">
 			reportwriteinterval="30000ms"
 			showinvisiblechars="True">
 			</testsuite>
+			<testmodule
+			id="e191a40c-73f2-426c-ae2c-167de81af108"
+			name="GSWebLogin"
+			ref="6d2e34bb-de59-4f97-b747-9ea47a1e4f78"
+			type="UserCode">
+			</testmodule>
 		</flatlistofchildren>
 		<childhierarchy>
 			<testsuite
@@ -92,6 +109,18 @@ rxversion="8.0">
 						id="1ba578bd-9451-4126-927b-d86e1ea9b1ba"
 						name="PublishProject">
 						</testmodule>
+						<testmodule
+						id="e191a40c-73f2-426c-ae2c-167de81af108"
+						name="GSWebLogin">
+						</testmodule>
+						<teardown
+						id="5ad4498f-f38c-431a-a2ca-258dda4794b6"
+						name="teardown">
+							<testmodule
+							id="524a5414-3392-4231-a58b-3423c69f6e9e"
+							name="CloseAppsAndBrowsers">
+							</testmodule>
+						</teardown>
 					</testcase>
 				</testcase>
 			</testsuite>

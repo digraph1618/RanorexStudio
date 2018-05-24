@@ -1,13 +1,10 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="UtilityMethods.cs" />
+    <Element value="Studio2017.rxtst" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
-    <Element value="Licensing.cs" />
     <Element value="Studio2017.rxtst" />
-    <Element value="Constants.cs" />
-    <Element value="UtilityMethods.cs" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">

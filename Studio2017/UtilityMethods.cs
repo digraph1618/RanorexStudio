@@ -267,5 +267,13 @@ namespace Studio2017
         	dir.Delete(true);
           }
         }
+        
+        public void openBrowser(string linkToOpen, string browser, string browserArgs) {
+        	int processId = Host.Local.OpenBrowser(linkToOpen, browser, browserArgs, true, true);
+        }
+        
+        public void closeBrowser(string browserName) {
+        	Host.Local.KillBrowser(browserName);
+        }
 	  }
     } 

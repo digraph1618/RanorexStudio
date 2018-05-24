@@ -49,6 +49,7 @@ namespace Studio2017
         Studio2017RepositoryFolders.AddEditServerDialogAppFolder _addeditserverdialog;
         Studio2017RepositoryFolders.BrowserDialogAppFolder _browserdialog;
         Studio2017RepositoryFolders.ServerListAppFolder _serverlist;
+        Studio2017RepositoryFolders.GroupShareAppFolder _groupshare;
 
         /// <summary>
         /// Gets the singleton class instance representing the Studio2017Repository element repository.
@@ -87,6 +88,7 @@ namespace Studio2017
             _addeditserverdialog = new Studio2017RepositoryFolders.AddEditServerDialogAppFolder(this);
             _browserdialog = new Studio2017RepositoryFolders.BrowserDialogAppFolder(this);
             _serverlist = new Studio2017RepositoryFolders.ServerListAppFolder(this);
+            _groupshare = new Studio2017RepositoryFolders.GroupShareAppFolder(this);
         }
 
 #region Variables
@@ -349,6 +351,15 @@ namespace Studio2017
         public virtual Studio2017RepositoryFolders.ServerListAppFolder ServerList
         {
             get { return _serverlist; }
+        }
+
+        /// <summary>
+        /// The GroupShare folder.
+        /// </summary>
+        [RepositoryFolder("3343a122-0dea-4209-a6b9-869c1755b01d")]
+        public virtual Studio2017RepositoryFolders.GroupShareAppFolder GroupShare
+        {
+            get { return _groupshare; }
         }
     }
 
@@ -4222,6 +4233,201 @@ namespace Studio2017
                 get
                 {
                     return _serverselectionInfo;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The GroupShareAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("3343a122-0dea-4209-a6b9-869c1755b01d")]
+        public partial class GroupShareAppFolder : RepoGenBaseFolder
+        {
+            Studio2017RepositoryFolders.LoginViewFolder _loginview;
+            RepoItemInfo _loadingwheelInfo;
+
+            /// <summary>
+            /// Creates a new GroupShare  folder.
+            /// </summary>
+            public GroupShareAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("GroupShare", "/dom[@caption='GroupShare']", parentFolder, 30000, null, false, "3343a122-0dea-4209-a6b9-869c1755b01d", "")
+            {
+                _loginview = new Studio2017RepositoryFolders.LoginViewFolder(this);
+                _loadingwheelInfo = new RepoItemInfo(this, "LoadingWheel", ".//body//div[@innertext~'Authenticating']", 30000, null, "1e863c26-b57c-40b2-9c9f-c2832c7d2e28");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("3343a122-0dea-4209-a6b9-869c1755b01d")]
+            public virtual Ranorex.WebDocument Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.WebDocument>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("3343a122-0dea-4209-a6b9-869c1755b01d")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The LoadingWheel item.
+            /// </summary>
+            [RepositoryItem("1e863c26-b57c-40b2-9c9f-c2832c7d2e28")]
+            public virtual Ranorex.DivTag LoadingWheel
+            {
+                get
+                {
+                    return _loadingwheelInfo.CreateAdapter<Ranorex.DivTag>(true);
+                }
+            }
+
+            /// <summary>
+            /// The LoadingWheel item info.
+            /// </summary>
+            [RepositoryItemInfo("1e863c26-b57c-40b2-9c9f-c2832c7d2e28")]
+            public virtual RepoItemInfo LoadingWheelInfo
+            {
+                get
+                {
+                    return _loadingwheelInfo;
+                }
+            }
+
+            /// <summary>
+            /// The LoginView folder.
+            /// </summary>
+            [RepositoryFolder("5a980fec-f294-4008-9120-17b43b077556")]
+            public virtual Studio2017RepositoryFolders.LoginViewFolder LoginView
+            {
+                get { return _loginview; }
+            }
+        }
+
+        /// <summary>
+        /// The LoginViewFolder folder.
+        /// </summary>
+        [RepositoryFolder("5a980fec-f294-4008-9120-17b43b077556")]
+        public partial class LoginViewFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _loginInfo;
+            RepoItemInfo _usernameInfo;
+            RepoItemInfo _passwordInfo;
+
+            /// <summary>
+            /// Creates a new LoginView  folder.
+            /// </summary>
+            public LoginViewFolder(RepoGenBaseFolder parentFolder) :
+                    base("LoginView", ".//div[@id~'loginView-']", parentFolder, 30000, null, false, "5a980fec-f294-4008-9120-17b43b077556", "")
+            {
+                _loginInfo = new RepoItemInfo(this, "LogIn", ".//span[@innertext='Log in']", 30000, null, "fcf9f9b5-64aa-40ff-827e-e2ce2a48490b");
+                _usernameInfo = new RepoItemInfo(this, "Username", ".//input[@name='username']", 30000, null, "02c2b395-88f1-4bc5-92a1-93382bc5dbf4");
+                _passwordInfo = new RepoItemInfo(this, "Password", ".//input[@name='password']", 30000, null, "5a897fd2-cfc2-4b8b-9879-7aa49754cae5");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("5a980fec-f294-4008-9120-17b43b077556")]
+            public virtual Ranorex.DivTag Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.DivTag>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("5a980fec-f294-4008-9120-17b43b077556")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The LogIn item.
+            /// </summary>
+            [RepositoryItem("fcf9f9b5-64aa-40ff-827e-e2ce2a48490b")]
+            public virtual Ranorex.SpanTag LogIn
+            {
+                get
+                {
+                    return _loginInfo.CreateAdapter<Ranorex.SpanTag>(true);
+                }
+            }
+
+            /// <summary>
+            /// The LogIn item info.
+            /// </summary>
+            [RepositoryItemInfo("fcf9f9b5-64aa-40ff-827e-e2ce2a48490b")]
+            public virtual RepoItemInfo LogInInfo
+            {
+                get
+                {
+                    return _loginInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Username item.
+            /// </summary>
+            [RepositoryItem("02c2b395-88f1-4bc5-92a1-93382bc5dbf4")]
+            public virtual Ranorex.InputTag Username
+            {
+                get
+                {
+                    return _usernameInfo.CreateAdapter<Ranorex.InputTag>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Username item info.
+            /// </summary>
+            [RepositoryItemInfo("02c2b395-88f1-4bc5-92a1-93382bc5dbf4")]
+            public virtual RepoItemInfo UsernameInfo
+            {
+                get
+                {
+                    return _usernameInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Password item.
+            /// </summary>
+            [RepositoryItem("5a897fd2-cfc2-4b8b-9879-7aa49754cae5")]
+            public virtual Ranorex.InputTag Password
+            {
+                get
+                {
+                    return _passwordInfo.CreateAdapter<Ranorex.InputTag>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Password item info.
+            /// </summary>
+            [RepositoryItemInfo("5a897fd2-cfc2-4b8b-9879-7aa49754cae5")]
+            public virtual RepoItemInfo PasswordInfo
+            {
+                get
+                {
+                    return _passwordInfo;
                 }
             }
         }
